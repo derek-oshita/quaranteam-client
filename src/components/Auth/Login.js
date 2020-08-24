@@ -24,7 +24,7 @@ class Login extends React.Component {
                 console.log(res)
                 this.props.setCurrentUser(res.data.token); 
                 // change this to events later
-                this.props.history.push('/events'); 
+                this.props.history.push('/user'); 
             })
             .catch((err) => {
                 console.log(err.response.status); 
@@ -32,7 +32,7 @@ class Login extends React.Component {
                 console.log(err.response.data.message); 
             }); 
     }; 
-    
+
     render () {
         return (
             <div className="login-container">

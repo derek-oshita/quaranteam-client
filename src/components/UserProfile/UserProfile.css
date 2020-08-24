@@ -1,0 +1,32 @@
+.user-details-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 100vw; 
+    height: 50vh; 
+}
+.user-details {
+    display: flex; 
+    height: 30vh; 
+    width: 75vw; 
+    border: solid black 2px; 
+}
+
+.user-image {
+    max-height: 30vh; 
+}
+
+.username-p {
+    font-size: 45px; 
+    padding: 75px 0 0 30px; 
+}
+
+.username-loc {
+    font-size: 20px; 
+    padding: 15px 0 0 30px; 
+    color: #5b5b5b; 
+}
+
+.user-posts {
+    text-align: center
+}
