@@ -9,7 +9,7 @@ import './App.css';
 class App extends Component {
 
   state = {
-    currentUser: localStorage.getItem('token'), 
+    currentUser: localStorage.getItem('token'),
   }; 
 
   componentDidMount() {
