@@ -7,7 +7,9 @@ function Nav ({ currentUser, logout }) {
         <nav>
             {/* LOGO */}
             <div className="nav-container">
-                <h2 className="logo">Audiophile</h2>
+                <NavLink className="nav-link" exact to='/'>
+                    <h2 className="logo">Audiophile</h2>
+                </NavLink>
             </div>
             {/* NAV LIST */}
             <div className="nav-container">
