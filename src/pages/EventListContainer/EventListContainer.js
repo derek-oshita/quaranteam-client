@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 
-class EventList extends Component {
+class EventListContainer extends Component {
     render() {
         return(
             <section>
@@ -10,4 +10,4 @@ class EventList extends Component {
     }
 }; 
 
-export default EventList; 
+export default EventListContainer; 

@@ -38,7 +38,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Nav />
+        <Nav currentUser={this.state.currentUser} logout={this.logout}/>
         <Routes setCurrentUser={this.setCurrentUser}/>
       </React.Fragment>
     )

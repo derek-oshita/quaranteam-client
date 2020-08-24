@@ -18,7 +18,7 @@ function Nav ({ currentUser, logout }) {
                 <li className="nav-item">
                     <NavLink className="nav-link" exact to='/'>Home</NavLink>
                 </li>
-
+            {/* LOGGED IN */}
             {currentUser && (
             <React.Fragment>
                 {/* EVENTS */}
@@ -26,11 +26,11 @@ function Nav ({ currentUser, logout }) {
                     <NavLink className="nav-link" exact to='/events'>Events</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" onClick={logout}>Logout</NavLink>
+                    <span className="nav-link"onClick={logout}>Logout</span>
                 </li>
             </React.Fragment>
             )}
-
+            {/* NOT LOGGED IN */}
             {!currentUser && (
             <React.Fragment>
                 {/* LOGIN */}
