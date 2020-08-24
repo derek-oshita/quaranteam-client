@@ -25,7 +25,7 @@ class App extends Component {
     localStorage.setItem('token', token); 
     setAuthHeader(token); 
     const decodedToken = jwt_decode(token); 
-    this.setState({ currentUser: decodedToken.id})
+    this.setState({currentUser: decodedToken.id})
   }; 
 
   logout = () => {
@@ -39,7 +39,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Nav />
-        <Routes />
+        <Routes setCurrentUser={this.setCurrentUser}/>
       </React.Fragment>
     )
   }
