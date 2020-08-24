@@ -21,7 +21,7 @@ class Login extends React.Component {
                 console.log(res)
                 // this.props.setCurrentUser(res.data.token); 
                 // change this to events later
-                // this.props.history.push('/'); 
+                // this.props.history.push('/events'); 
             })
             .catch((err) => {
                 console.log(err.response.status); 

@@ -4,7 +4,7 @@ import Login from '../components/Auth/Login';
 import Register from '../components/Auth/Register'; 
 import GameList from '../pages/EventListContainer/EventList'
 
-export default () => (
+export default ({ currentUser, setCurrentUser }) => (
     <Switch >
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />

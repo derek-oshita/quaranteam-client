@@ -18,14 +18,32 @@ function Nav ({ currentUser, logout }) {
                 <li className="nav-item">
                     <NavLink className="nav-link" exact to='/'>Home</NavLink>
                 </li>
+
+            {currentUser && (
+            <React.Fragment>
+                {/* EVENTS */}
+                <li className="nav-item">
+                    <NavLink className="nav-link" exact to='/events'>Events</NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink className="nav-link" onClick={logout}>Logout</NavLink>
+                </li>
+            </React.Fragment>
+            )}
+
+            {!currentUser && (
+            <React.Fragment>
                 {/* LOGIN */}
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/login">Login</NavLink>
                 </li>
-                {/* REGISTE */}
+                {/* REGISTER */}
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/register">Register</NavLink>
                 </li>
+            </React.Fragment>
+            )}
+     
             </ul>
             </div>
         </nav>
