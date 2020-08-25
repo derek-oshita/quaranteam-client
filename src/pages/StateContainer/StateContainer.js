@@ -1,6 +1,7 @@
 // IMPORTS
 import React from 'react'; 
 import StateName from '../../components/StateName/StateName'; 
+import StateImages from '../StateImages/StateImages'; 
 import './StateContainer.less'; 
 // ANTDESIGN
 import { Layout, Menu, Breadcrumb } from 'antd';
@@ -41,7 +42,7 @@ class StateContainer extends React.Component {
             <Layout className="layout">
                 {/* CONTENT */}
                 <Content style={{ padding: '0 50px' }}>
-                {/* BREADCUMBS */}
+                {/* BREADCUMB LINKS */}
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item><NavLink className="nav-link" exact to='/'>Home</NavLink></Breadcrumb.Item>
                     <Breadcrumb.Item><NavLink className="nav-link" exact to='/states'>State Data</NavLink></Breadcrumb.Item>
@@ -51,7 +52,9 @@ class StateContainer extends React.Component {
                 <div className="site-layout-content">
                 {/* <StateName abbrev={stateInfo.state} className="state-name"/>  */}
                 {/* STATEIMAGES WILL GO HERE */}
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_California.svg/1200px-Flag_of_California.svg.png"></img>
+                    <StateImages abbrev={stateInfo.state}/>
+
+                    {/* <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_California.svg/1200px-Flag_of_California.svg.png"></img> */}
                     <div className="site-card-wrapper">
                     <Row gutter={16}>
                     <Col span={8}>
@@ -92,17 +95,8 @@ class StateContainer extends React.Component {
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
             </Layout>
-
-
-
         )
     }
 }; 
 
 export default StateContainer; 
-
-
-/*
-
-
-*/

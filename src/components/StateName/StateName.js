@@ -16,6 +16,10 @@ function StateName (props) {
         newName = 'Arkansas'
         return newName
     }
+    if (newName === 'AS') {
+        newName = 'American Samoa'
+        return newName
+    }
     if (newName === 'AZ') {
         newName = 'Arizona'
         return newName
