@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import StateList from '../../components/StateList/StateList'
+import StateShow from '../../components/StateShow/StateShow'
 
 class StateDataContainer extends Component {
     state = {

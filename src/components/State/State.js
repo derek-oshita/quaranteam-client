@@ -1,15 +1,27 @@
+// IMPORTS
 import React from 'react'; 
+import { Link } from 'react-router-dom'; 
+import StateShow from '../StateShow/StateShow'; 
 
-
+// STATE
 function State (props) {
-    const { state } = props; 
-
+    const { stateObj, list } = props; 
     return(
+        <Link to={`/states/${stateObj.state}`}>
         <div>
-            <p>{state.state}</p>
-            <p>{}</p>
+            <p>{stateObj.state}</p>
+            <div>
+                {!list && (
+                <>  
+                <p>{stateObj.state}</p>  
+                <p>{stateObj.dataQualityGrade}</p>
+                </>
+                )}
+            </div>
         </div>
+        </Link>
     )
 }; 
 
+// EXPORTS
 export default State; 
