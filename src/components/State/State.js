@@ -1,7 +1,6 @@
 // IMPORTS
 import React from 'react'; 
 import { Link } from 'react-router-dom'; 
-import StateShow from '../StateShow/StateShow'; 
 
 // STATE
 function State (props) {

@@ -1,5 +1,6 @@
 import React from 'react'; 
-import State from '../../components/State/State'
+// import State from '../../components/State/State'; 
+import StateName from '../../components/StateName/StateName'; 
 
 class StateContainer extends React.Component {
     
@@ -20,10 +21,19 @@ class StateContainer extends React.Component {
 
     render() {
         const stateInfo = this.state.state; 
+        // if (stateInfo.state == 'CA') {
+        //     stateInfo.state = 'California'
+        //     return stateInfo.state
+        // }
         return(
             <section>
-                {console.log(this.state.state.state)}
+                {console.log(stateInfo.state)}
+
+
                 <p>{stateInfo.state}</p>
+
+
+                <StateName abbrev={stateInfo.state}/> 
             </section>
         )
     }

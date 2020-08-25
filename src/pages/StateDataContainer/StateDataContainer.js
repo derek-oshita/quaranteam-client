@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
-import StateList from '../../components/StateList/StateList'
-import StateShow from '../../components/StateShow/StateShow'
+import StateList from '../../components/StateList/StateList';
+
 
 class StateDataContainer extends Component {
     state = {

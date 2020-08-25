@@ -4,8 +4,6 @@ import Login from '../components/Auth/Login';
 import Register from '../components/Auth/Register'; 
 import StateDataContainer from '../pages/StateDataContainer/StateDataContainer'; 
 import StateContainer from '../pages/StateContainer/StateContainer'; 
-import StateShow from '../components/StateShow/StateShow'; 
-import State from '../components/State/State'; 
 import UserProfile from '../components/UserProfile/UserProfile'; 
 
 export default ({ setCurrentUser }) => (
