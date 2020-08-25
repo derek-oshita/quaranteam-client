@@ -23,7 +23,7 @@ function Nav ({ currentUser, logout }) {
             <React.Fragment>
                 {/* EVENTS */}
                 <li className="nav-item">
-                    <NavLink className="nav-link" exact to='/events'>Events</NavLink>
+                    <NavLink className="nav-link" exact to='/states'>State Data</NavLink>
                 </li>
                 <li className="nav-item">
                     <span className="nav-link"onClick={logout}>Logout</span>

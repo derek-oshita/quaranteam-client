@@ -21,10 +21,12 @@ class Login extends React.Component {
         event.preventDefault(); 
         axios.post(`${process.env.REACT_APP_API}/auth/login`, this.state)
             .then((res) => {
+                console.log(res.data)
+                localStorage.setItem('id', res.data.id)
                 console.log(res)
                 this.props.setCurrentUser(res.data.token); 
-                // change this to events later
-                this.props.history.push('/user'); 
+                // change this to user profile later
+                this.props.history.push('/states'); 
             })
             .catch((err) => {
                 console.log(err.response.status); 
