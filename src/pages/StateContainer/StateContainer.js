@@ -7,7 +7,6 @@ class StateContainer extends React.Component {
     state = {
         state: {}, 
     };  
-
     componentDidMount() {
         fetch(`https://api.covidtracking.com/v1/states/${this.props.match.params.state}/current.json`)
             .then((response) => (response.json()))
@@ -18,22 +17,32 @@ class StateContainer extends React.Component {
             })
             .catch((err) => console.log(err))
     }; 
-
     render() {
         const stateInfo = this.state.state; 
-        // if (stateInfo.state == 'CA') {
-        //     stateInfo.state = 'California'
-        //     return stateInfo.state
+        // function formatDate (updatedAt) {
+        //     let updatedAt = stateInfo.lastUpdateEt; 
         // }
         return(
-            <section>
-                {console.log(stateInfo.state)}
-
-
-                <p>{stateInfo.state}</p>
-
-
+            <section className="main-state-container">
+                {/* STATE NAME  */}
+                <div className="state-name-container">
                 <StateName abbrev={stateInfo.state}/> 
+                </div>
+                {/* STATE DATA */}
+                <p>Data Quality: <strong>{stateInfo.dataQualityGrade}</strong></p>
+                {/* DATE */}
+                <p>Last Updated: {stateInfo.lastUpdateEt}</p>
+                {/* DEATHS */}
+                <p>Total Deaths: {stateInfo.death}</p>
+                {/* POSITIVE */}
+                <p>Positive Cases: {stateInfo.positive}</p>
+                {/* NEGATIVE */}
+                <p>Negative Cases: {stateInfo.negative}</p>
+                {/* TOTAL */}
+                <p>Total Test Results: {stateInfo.totalTestResults}</p>
+
+
+
             </section>
         )
     }

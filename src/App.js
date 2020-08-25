@@ -4,7 +4,8 @@ import jwt_decode from 'jwt-decode';
 import Nav from './components/Nav/Nav';
 import Routes from './config/routes'; 
 import setAuthHeader from './utils/setAuthHeader';
-import './App.css';
+import { Button } from 'antd';
+import './App.less';
 
 class App extends Component {
 
@@ -40,6 +41,9 @@ class App extends Component {
       <React.Fragment>
         <Nav currentUser={this.state.currentUser} logout={this.logout}/>
         <Routes setCurrentUser={this.setCurrentUser} currentUser={this.state.currentUser}/>
+        <div className="App">
+          <Button type="primary">Button</Button>
+        </div>
       </React.Fragment>
     )
   }
