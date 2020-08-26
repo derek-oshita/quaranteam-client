@@ -2,20 +2,20 @@
 import React from 'react';
 import Comment from '../Comment/Comment';
 
-function GamesList(props) {
-  const gamesList = props.games.map((gameObj) => {
+function CommentList(props) {
+    console.log('CommentList: ', props.comments)
+  const commentList = props.comments.map((commentObj) => {
     return (
-      <Link key={gameObj._id} to={`/games/${gameObj._id}`}>
-        <Game game={gameObj} list={true} />
-      </Link>
+        <Comment comment={commentObj} list={true} />
     )
   });
 
   return (
-    <div className="games-container">
-      {gamesList}
+    <div className="comments-container">
+      {commentList}
+      {/* commentList */}
     </div>
   );
 }
 
-export default GamesList;
+export default CommentList;

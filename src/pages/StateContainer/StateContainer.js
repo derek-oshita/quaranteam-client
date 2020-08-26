@@ -3,6 +3,8 @@ import React from 'react';
 import StateName from '../../components/StateName/StateName'; 
 import StateMeta from '../StateMeta/StateMeta'; 
 import Comment from '../../components/Comment/Comment'; 
+import CommentList from '../../components/CommentList/CommentList'; 
+import CommentListContainer from '../CommentListContainer/CommentListContainer'; 
 import './StateContainer.less'; 
 // ANTDESIGN
 import { Layout, Menu, Breadcrumb } from 'antd';
@@ -101,7 +103,8 @@ class StateContainer extends React.Component {
                 </div>
                 </Content>
                 {/* COMMENTS GO HERE */}
-                <Comment />
+                {/* <Comment /> */}
+                <CommentListContainer />
                 <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
             </Layout>
         )
