@@ -1,0 +1,46 @@
+.comment-container {
+    max-width: 40vw;
+    height: 41vh; 
+    border: 1px solid grey; 
+}
+
+.comment-title-container {
+    border-bottom: 1px solid grey; 
+    /* background-color: #f8f8ff; */
+    background-color: #2C3857; 
+}
+
+.comment-title {
+    padding-top: 10px; 
+    color: white; 
+}
+
+.comment-body-container {
+    background-color: #f8f8ff; 
+}
+
+.comment-body {
+    padding: 20px 10px 20px 10px; 
+    margin-bottom: 0;
+}
+
+.comment-user-container {
+    background-color: #f8f8ff; 
+    border-top: 1px solid grey; 
+}
+
+.comment-user {
+    margin-bottom: 0; 
+    padding: 7px 7px 10px 7px; 
+}
+
+.comment-date {
+    color: grey; 
+}
+
+
+
+
+
+
+

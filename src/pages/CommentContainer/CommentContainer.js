@@ -1,6 +1,6 @@
 import React from 'react'; 
 import CommentModel from '../../models/comment'; 
-
+import { withRouter } from 'react-router-dom';
 import { Form, Input, InputNumber, Button } from 'antd';
 
 class CommentContainer extends React.Component {
@@ -49,4 +49,4 @@ class CommentContainer extends React.Component {
 }; 
 
 
-export default CommentContainer; 
+export default CommentContainer
