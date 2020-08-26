@@ -2,21 +2,16 @@ import React from 'react';
 import StateImage from '../StateImage/StateImage'
 
 function StateImageList(props) {
-    // console.log(props.stateCode)
-    props.stateMeta.map((stateObj) => {
-    // console.log(stateObj)
-      return (
-        <React.Fragment>
-          <StateImage stateObj={stateObj}/>
-        </React.Fragment>
-      )
-    });
+    console.log(props.stateCode)
+    console.log(props.stateMeta)
+    let image = props.stateMeta.find(stateObj => stateObj.code === props.stateCode); 
       return (
         <React.Fragment>
           {/* <Game game={gameObj} list={true} /> */}
-          {/* {imageList} */}
+       
           {/* <StateImage stateCode={props.stateCode}/> */}
           {/* <StateImage stateObj={stateObj}/> */}
+          <StateImage image={image}/>
         </React.Fragment>
       )
   }
