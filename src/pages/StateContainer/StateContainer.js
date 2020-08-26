@@ -1,7 +1,7 @@
 // IMPORTS
 import React from 'react'; 
 import StateName from '../../components/StateName/StateName'; 
-import StateImages from '../StateImages/StateImages'; 
+import StateMeta from '../StateMeta/StateMeta'; 
 import './StateContainer.less'; 
 // ANTDESIGN
 import { Layout, Menu, Breadcrumb } from 'antd';
@@ -52,7 +52,7 @@ class StateContainer extends React.Component {
                 <div className="site-layout-content">
                 {/* <StateName abbrev={stateInfo.state} className="state-name"/>  */}
                 {/* STATEIMAGES WILL GO HERE */}
-                    <StateImages abbrev={stateInfo.state}/>
+                    <StateMeta abbrev={stateInfo.state}/>
 
                     {/* <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_California.svg/1200px-Flag_of_California.svg.png"></img> */}
                     <div className="site-card-wrapper">
