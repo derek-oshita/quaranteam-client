@@ -1,9 +1,13 @@
 import React from 'react'; 
 
 function StateImage (props) {
-        console.log('stateimage: ', props)
+        console.log('stateimage data: ', props.data)
+        let stateData = props.data; 
+        // console.log('state data: ', stateData.nickname)
         return (
-            <div>StateImage</div>
+            <React.Fragment>
+                {/* <p>{props.data.nickname}</p> */}
+            </React.Fragment>
         )
 };
 

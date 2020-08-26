@@ -5,9 +5,10 @@ import StateMeta from '../StateMeta/StateMeta';
 import './StateContainer.less'; 
 // ANTDESIGN
 import { Layout, Menu, Breadcrumb } from 'antd';
-import { NavLink } from 'react-router-dom'; 
+import { NavLink, Link } from 'react-router-dom'; 
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 import { Card, Col, Row } from 'antd';
+import { Button } from 'antd';
 // VARIABLES
 const { Header, Content, Footer } = Layout;
 const { Meta } = Card;
@@ -89,6 +90,12 @@ class StateContainer extends React.Component {
                         </Card>
                     </Col>
                     </Row>
+                    </div>
+                    {/* BUTTON */}
+                    <div>
+                    <Link className="nav-link"  to={`/states/${stateInfo.state}/comment`}>
+                    <Button type="primary">Add Comment</Button>
+                    </Link>
                     </div>
 
                 </div>
