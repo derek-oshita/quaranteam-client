@@ -38,12 +38,11 @@ class App extends Component {
   }; 
 
   render() {
+    console.log(this.state.currentUser)
     return (
       <React.Fragment>
         <Nav currentUser={this.state.currentUser} logout={this.logout}/>
         <Routes setCurrentUser={this.setCurrentUser} currentUser={this.state.currentUser}/>
-        <div className="App">
-        </div>
       </React.Fragment>
     )
   }

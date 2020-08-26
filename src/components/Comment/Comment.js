@@ -5,7 +5,8 @@ import './Comment.css';
 
 
 // COMMENT FUNCTION - will likely need to be class based 
-function Comment () {
+function Comment (props) {
+    console.log(props)
     return (
         <div className="comment-container">
         {/* <img className="comment-image" src="" /> */}
