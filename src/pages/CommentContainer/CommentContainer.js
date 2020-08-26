@@ -7,6 +7,8 @@ class CommentContainer extends React.Component {
     state = {
         title: '',
         body: '',
+        userId: this.props.currentUser, 
+        stateId: this.props.match.params.state, 
       };
     
       handleChange = (event) => {
@@ -14,21 +16,24 @@ class CommentContainer extends React.Component {
         if (event.target.value === 'on') {
           event.target.value = true;
         }
-        
         this.setState({[event.target.name]: event.target.value})
       };
       
       // CONTINUE HERE 
       handleSubmit = (event) => {
         event.preventDefault();
+        // this.props.match.params.state
+        console.log('comment container', this.props.match.params.state)
         CommentModel.createComment(this.state)
           .then((result) => {
             console.log(result);
           });
-        this.props.history.push('/states');
+        this.props.history.push(`/states/${this.props.match.params.state}`);
       }
+     
 
     render () {
+      console.log(`CommentContainer: ${this.props.currentUser}`)
         return (
             <div>
             <form onSubmit={this.handleSubmit}>

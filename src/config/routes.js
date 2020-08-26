@@ -12,9 +12,9 @@ export default ({ setCurrentUser, currentUser }) => (
         <Route path='/register' component={Register} />
         <Route path='/login' render={() => <Login setCurrentUser={setCurrentUser} />} />
         {/* <Route path='/states/:state/comment' component={CommentContainer}  /> */}
-        <Route path='/states/:state/comment' render={ () =>
+        <Route path='/states/:state/comment' render={ (props) =>
             currentUser
-            ? <CommentContainer currentUser={currentUser}/>
+            ? <CommentContainer {...props} currentUser={currentUser}/>
             : <Redirect to='/login' />
         } /> 
         <Route path='/states/:state' component={StateContainer} />
