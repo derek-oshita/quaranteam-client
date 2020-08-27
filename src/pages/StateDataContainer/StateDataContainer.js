@@ -20,7 +20,7 @@ class StateDataContainer extends Component {
     render() {
         return(
             <section>
-                {console.log(this.state.states)}
+                {/* {console.log(this.state.states)} */}
                 <StateList states={this.state.states} />
             </section>
         )

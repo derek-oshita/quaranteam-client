@@ -19,8 +19,8 @@ class StateMeta extends React.Component {
             .catch((err) => console.log(err))
     }
     render () {
-        console.log('StateMeta props: ', this.props.abbrev)
-        console.log('StateMeta: ', this.state.stateMeta)
+        // console.log('StateMeta props: ', this.props.abbrev)
+        // console.log('StateMeta: ', this.state.stateMeta)
         return(
             <React.Fragment>
                 <StateImageList stateCode={this.props.abbrev} stateMeta={this.state.stateMeta}/>

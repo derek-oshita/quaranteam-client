@@ -33,7 +33,7 @@ class CommentContainer extends React.Component {
      
 
     render () {
-      console.log(`CommentContainer: ${this.props.currentUser}`)
+      // console.log(`CommentContainer: ${this.props.currentUser}`)
         return (
             <>
             <form onSubmit={this.handleSubmit}>

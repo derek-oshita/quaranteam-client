@@ -2,10 +2,10 @@ import React from 'react';
 import StateImage from '../StateImage/StateImage'
 
 function StateImageList(props) {
-    console.log(props.stateCode)
-    console.log(props.stateMeta)
+    // console.log(props.stateCode)
+    // console.log(props.stateMeta)
     let stateInfo = props.stateMeta.find(stateObj => stateObj.code === props.stateCode); 
-    console.log('image: ', stateInfo)
+    // console.log('image: ', stateInfo)
       return (
         <>
           {/* <Game game={gameObj} list={true} /> */}

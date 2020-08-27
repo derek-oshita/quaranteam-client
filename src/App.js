@@ -39,7 +39,7 @@ class App extends Component {
   }; 
 
   render() {
-    console.log('App.js currentUser= ', this.state.currentUser)
+    // console.log('App.js currentUser= ', this.state.currentUser)
     return (
       <React.Fragment>
         <Nav currentUser={this.state.currentUser} logout={this.logout}/>

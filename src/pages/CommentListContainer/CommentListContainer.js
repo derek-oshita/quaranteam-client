@@ -14,8 +14,8 @@ class CommentListContainer extends React.Component {
       .catch((err) => console.log(err))
   };
   render() {
-    console.log('CommentListContainer ', this.state.comments)
-    return <CommentList comments={this.state.comments} />;
+    // console.log('CommentListContainer -', this.props.stateCode)
+    return <CommentList comments={this.state.comments} stateCode={this.props.stateCode}/>;
   }
 }
 

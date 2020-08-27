@@ -39,7 +39,9 @@ class StateContainer extends React.Component {
       };
     render() {
         const stateInfo = this.state.state; 
-        console.log('stateInfo: ', stateInfo)
+        const stateCode = this.state.state.state; 
+        // console.log('stateInfo: ', stateInfo)
+        // console.log('stateCode: ', stateCode)
         return(
             <Layout className="layout">
                 {/* CONTENT */}
@@ -102,7 +104,7 @@ class StateContainer extends React.Component {
                 </Content>
                 {/* COMMENTS GO HERE */}
                 {/* <Comment /> */}
-                <CommentListContainer />
+                <CommentListContainer stateCode={stateCode}/>
                 <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
             </Layout>
         )

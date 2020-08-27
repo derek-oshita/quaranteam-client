@@ -3,16 +3,17 @@ import React from 'react';
 import Comment from '../Comment/Comment';
 
 function CommentList(props) {
-    console.log('CommentList: ', props.comments)
-  const commentList = props.comments.map((commentObj) => {
-    return (
-        <Comment comment={commentObj} list={true} />
-    )
-  });
-
+    console.log('CommentList comments: ', props.comments)
+    console.log('CommentList stateCode: ', props.stateCode)
+    // const commentList = props.comments.map((commentObj) => {
+    // return (
+    //     <Comment comment={commentObj} list={true} />
+    // )
+    let stateComments = props.comments.filter(commentObj => commentObj.stateId === props.stateCode); 
+    console.log('stateComments: ', stateComments);
   return (
     <div className="comments-container">
-      {commentList}
+      {/* {commentList} */}
       {/* commentList */}
     </div>
   );

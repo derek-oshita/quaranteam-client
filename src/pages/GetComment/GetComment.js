@@ -17,7 +17,7 @@ class GetComment extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return <Comment comment={this.state.comment} list={false} />;
   }
 }

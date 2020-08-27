@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './Nav.css'; 
 
 function Nav ({ currentUser, logout }) {
-    console.log(`nav: ${currentUser}`)
+    // console.log(`nav: ${currentUser}`)
     return (
         <nav>
             {/* LOGO */}
