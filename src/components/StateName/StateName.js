@@ -220,6 +220,10 @@ function StateName (props) {
         newName = 'Vermont'
         return newName
     }
+    if (newName === 'WA') {
+        newName = 'Washington'
+        return newName
+    }
     if (newName === 'WI') {
         newName = 'Wisconsin'
         return newName
@@ -232,7 +236,6 @@ function StateName (props) {
         newName = 'Wyoming'
         return newName
     }
-
     return (
         <div>
             {newName}

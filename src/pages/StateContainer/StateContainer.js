@@ -48,7 +48,7 @@ class StateContainer extends React.Component {
             {/* CONTENT */}
                 <Content style={{ padding: '0 50px' }}>
             {/* BREADCUMB LINKS */}
-                <Breadcrumb style={{ margin: '16px 0' }}>
+                <Breadcrumb style={{ margin: '10px 0' }}>
                     <Breadcrumb.Item><NavLink className="nav-link" exact to='/'>Home</NavLink></Breadcrumb.Item>
                     <Breadcrumb.Item><NavLink className="nav-link" exact to='/states'>State Data</NavLink></Breadcrumb.Item>
                     <Breadcrumb.Item><StateName abbrev={stateInfo.state}/></Breadcrumb.Item>
@@ -60,33 +60,33 @@ class StateContainer extends React.Component {
                 {/* DATA CARDS */}
                     <div className="site-card-wrapper">
                     <Row gutter={16}>
-                    <Col span={8}>
+                    <Col span={8} className="data-table">
                         <Card title="Data Quality:" bordered={false}>
                         <strong>{stateInfo.dataQualityGrade}</strong>
                         </Card>
                     </Col>
-                    <Col span={8}>
+                    <Col span={8} className="data-table">
                         <Card title="Last Updated:" bordered={false}>
                         <strong>{stateInfo.lastUpdateEt}</strong>
                         </Card>
                     </Col>
-                    <Col span={8}>
+                    <Col span={8} className="data-table">
                         <Card title="Total Deaths:" bordered={false}>
                         <strong>{stateInfo.death}</strong>
                         </Card>
                     </Col>
 
-                    <Col span={8}>
+                    <Col span={8} className="data-table">
                         <Card title="Positive Cases:" bordered={false}>
                         <strong>{stateInfo.positive}</strong>
                         </Card>
                     </Col>
-                    <Col span={8}>
+                    <Col span={8} className="data-table">
                         <Card title="Negative Cases:" bordered={false}>
                         <strong>{stateInfo.negative}</strong>
                         </Card>
                     </Col>
-                    <Col span={8}>
+                    <Col span={8} className="data-table">
                         <Card title="Total Test Results:" bordered={false}>
                         <strong>{stateInfo.negative}</strong>
                         </Card>
