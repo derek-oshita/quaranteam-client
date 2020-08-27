@@ -1,0 +1,17 @@
+.table-header {
+    font-size: 60px;
+
+}
+
+.statelist-container {
+    width: 100vw; 
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.statelist-table {
+    width: 55vw; 
+    padding-bottom: 30vh;
+}

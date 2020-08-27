@@ -1,0 +1,7 @@
+.state-code {
+    font-size: 38px;
+}
+
+.state-code:hover {
+    text-decoration: underline;
+}
