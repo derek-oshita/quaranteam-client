@@ -1,0 +1,11 @@
+.comment-form-container {
+    height: 90vh; 
+}
+
+.comment-form {
+    padding-top: 20vh;
+}
+
+.comment-header {
+    font-size: 50px;
+}

@@ -44,8 +44,8 @@ export default ({ setCurrentUser, currentUser }) => (
             } /> 
         {/* STATES INDEX */}
             <Route path='/states' component={StateDataContainer} />
-        {/* PROFILE */}
-            <Route path='/user' component={UserProfile} />
+        {/* PROFILE
+            <Route path='/user' component={UserProfile} /> */}
     </Switch>
 ); 
 

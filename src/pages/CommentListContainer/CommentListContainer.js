@@ -6,6 +6,7 @@ class CommentListContainer extends React.Component {
   state = {
     comments: [],
   };
+  
   componentDidMount() {
     CommentModel.getAllComments()
       .then((result) => {

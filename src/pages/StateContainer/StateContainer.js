@@ -20,7 +20,6 @@ class StateContainer extends React.Component {
     state = {
         state: {}, 
         collapsed: false,
-        
     };  
     componentDidMount() {
         fetch(`https://api.covidtracking.com/v1/states/${this.props.match.params.state}/current.json`)
@@ -39,9 +38,6 @@ class StateContainer extends React.Component {
     render() {
         const stateInfo = this.state.state; 
         const stateCode = this.state.state.state; 
-        // console.log('stateInfo: ', stateInfo)
-        // console.log('stateCode: ', stateCode)
-        // console.log('StateContainer currentUser = ', this.props.currentUser)
         const currentUser = this.props.currentUser; 
         return(
             <Layout className="layout">
@@ -101,7 +97,7 @@ class StateContainer extends React.Component {
                     </div>
                 </div>
                 </Content>
-            {/* COMMENTS GO HERE */}
+            {/* COMMENTS */}
                 <CommentListContainer stateCode={stateCode} currentUser={currentUser}/>
                 <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
             </Layout>

@@ -1,6 +1,7 @@
 import React from 'react'; 
 import CommentModel from '../../models/comment'; 
 import { Button } from 'antd';
+import './CommentContainer.css'
 
 class CommentContainer extends React.Component {
     state = {
@@ -11,21 +12,22 @@ class CommentContainer extends React.Component {
       };
     
       handleChange = (event) => {
-        // console.log(event.target.id);
         if (event.target.value === 'on') {
           event.target.value = true;
         }
         this.setState({[event.target.name]: event.target.value})
       };
       
-      // CONTINUE HERE 
       handleSubmit = (event) => {
         event.preventDefault();
-        // this.props.match.params.state
         console.log('comment container', this.props.match.params.state)
         CommentModel.createComment(this.state)
           .then((result) => {
-            console.log(result);
+            console.log(result.title);
+            this.setState({
+              title: result.title, 
+              body: result.body, 
+            })
           });
         this.props.history.push(`/states/${this.props.match.params.state}`);
       }
@@ -34,9 +36,9 @@ class CommentContainer extends React.Component {
     render () {
       console.log(`CommentContainer: ${this.props.currentUser}`)
         return (
-            <>
-            <form onSubmit={this.handleSubmit}>
-              <h2>How is {this.props.match.params.state} doing?</h2>
+            <div className="comment-form-container">
+            <form onSubmit={this.handleSubmit} className="comment-form">
+              <h2 className="comment-header">How is {this.props.match.params.state} doing?</h2>
               <div>
                 <label htmlFor="title">Title</label>
                 <input onInput={this.handleChange} type="text" name="title" />
@@ -47,7 +49,7 @@ class CommentContainer extends React.Component {
               </div>
               <Button type="primary" onClick={this.handleSubmit}>Save</Button>
             </form>
-          </>
+          </div>
         )
     }
 }; 
