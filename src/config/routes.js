@@ -16,7 +16,7 @@ export default ({ setCurrentUser, currentUser }) => (
         {/* LOGIN */}
         <Route path='/login' render={() => <Login setCurrentUser={setCurrentUser} />} />
         {/* EDIT COMMENT */}
-        <Route path='/states/:state/comment/edit' render={ (props) =>
+        <Route path='/states/:state/comment/:id/edit' render={ (props) =>
             currentUser
             ? <EditComment {...props} currentUser={currentUser}/>
             : <Redirect to='/login' />

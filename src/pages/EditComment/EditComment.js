@@ -36,14 +36,14 @@ class EditComment extends React.Component {
     return (
       <>
             <form onSubmit={this.handleSubmit}>
-              <h2>Comment On Your Experience</h2>
+              <h2>Edit Comment</h2>
               <div>
                 <label htmlFor="title">Title</label>
-                <input onInput={this.handleChange} type="text" name="title" />
+                <input onInput={this.handleChange} value={title} type="text" name="title" />
               </div>
               <div>
                 <label htmlFor="body">Body</label>
-                <input onInput={this.handleChange} type="text" name="body" />
+                <input onInput={this.handleChange} value={body} type="text" name="body" />
               </div>
               <button type="submit">Update Comment</button>
             </form>
