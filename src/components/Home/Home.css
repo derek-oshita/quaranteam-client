@@ -1,4 +1,16 @@
+.hero-main {
+    background-color: #f8f8ff;
+    height: 100vh; 
+}
+
 .hero {
     margin-top: 10vh;
+    margin-bottom: 10vh;
+    height: 70vh; 
+    width: 65vw; 
+}
+
+.divider {
+    height: 50vh; 
 }
 
