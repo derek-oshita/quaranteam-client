@@ -27,13 +27,13 @@
 }
 
 .get-h4 {
-    padding: 4vh; 
+    padding: 7vh; 
     color: #2C3857;
     font-size: 60px;
 }
 
 .post-h4 {
-    padding: 4vh; 
+    padding: 7vh; 
     color: #2C3857;
     font-size: 60px;
 }
@@ -42,4 +42,8 @@
     padding-left: 30px;
     padding-right: 30px;
     font-size: 30px;
+}
+
+.call-to-action:hover {
+    text-decoration: underline;
 }

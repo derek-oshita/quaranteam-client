@@ -14,7 +14,7 @@ function StateList (props) {
     <>
     
     {/* {stateList} */}
-    <Divider orientation="left" ><span className="table-header">Table of U.S. Data</span></Divider>
+    <Divider orientation="left" ><span className="table-header">Periodic Table of the US</span></Divider>
     <div className="statelist-container">
         <div className="statelist-table">
             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
