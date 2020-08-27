@@ -5,7 +5,7 @@ import './About.css';
 function About() {
     return (
         <section className="about-main-container">
-            <div className="about-table">
+            <div className="about-table" id="about">
                 <div className="get">
                     <h4 className="get-h4">Get Real Data</h4>
                     <p>Using data from Covidtracking.com, you can trust that information regarding the pandemic is both comprehensive and up to date. We also relay helpful metadata around each state, as provided by Civil.Services.</p>

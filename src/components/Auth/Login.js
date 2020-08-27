@@ -3,6 +3,8 @@ import React from 'react';
 import { withRouter } from 'react-router-dom'; 
 import axios from 'axios';
 import './Login.css'; 
+// ANT DESIGN 
+import { Button } from 'antd';
 
 // LOGIN
 class Login extends React.Component {
@@ -36,23 +38,25 @@ class Login extends React.Component {
     }; 
 
     render () {
+        // Borrowed forms from KennyB. 
         return (
             <div className="login-container">
             <div className="login-form-container">
                 <h3 className="login">Login</h3>
                 <form onSubmit={this.handleSubmit} className="login-form">
                     {/* EMAIL */}
-                    <div className="form-item">
+                    <div className="form-item animate__fadeIn animate__animated">
                         <label htmlFor="email">Email: </label>
                         <input onChange={this.handleChange} type="text" id="email" name="email" value={this.state.email} />
                     </div>
                     {/* PASSWORD */}
-                    <div className="form-item">
+                    <div className="form-item animate__fadeIn animate__animated">
                         <label htmlFor="password">Password: </label>
                         <input onChange={this.handleChange} type="text" id="password" name="password" value={this.state.password} />
                     </div>
                     {/* SUBMIT BUTTON */}
-                    <button type="submit">Login</button>
+                    {/* <button type="submit">Login</button> */}
+                    <Button type="primary" onClick={this.handleSubmit} className="animate__fadeIn animate__animated">Login</Button>
                 </form>
             </div>
         </div>

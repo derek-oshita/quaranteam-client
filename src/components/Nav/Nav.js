@@ -1,6 +1,7 @@
 import React from 'react'; 
 import { NavLink } from 'react-router-dom'; 
 import './Nav.css'; 
+import About from '../../components/About/About'
 
 function Nav ({ currentUser, logout }) {
     // console.log(`nav: ${currentUser}`)
@@ -19,6 +20,10 @@ function Nav ({ currentUser, logout }) {
                 <li className="nav-item">
                     <NavLink className="nav-link" exact to='/'>Home</NavLink>
                 </li>
+                {/* ABOUT */}
+                {/* <li className="nav-item">
+                    <NavLink className="nav-link" exact to={About}>About</NavLink>
+                </li> */}
             {/* LOGGED IN */}
             {currentUser && (
             <React.Fragment>

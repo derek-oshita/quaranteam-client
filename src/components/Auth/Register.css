@@ -1,11 +1,45 @@
 .register-container {
     height: 90vh; 
-    display: flex; 
-    align-items: center;
-    justify-content: center;
 }
 
 .register-form-container {
-    text-align: center; 
-    height: 45vh; 
+    padding-top: 20vh;
 }
+
+.register {
+    font-size: 50px;
+}
+
+form {
+    display: block;
+    max-width: 600px;
+    padding: 0 5%;
+    margin: 0 auto;
+  }
+  
+  label {
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 0 auto 15px;
+    font-size: 18px;
+  }
+  
+  input[type="submit"],
+  button[type="submit"] {
+    background-color: #004D99;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    float: right;
+    cursor: pointer;
+  }
