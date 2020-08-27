@@ -1,7 +1,7 @@
 // IMPORTS
 import React from 'react';
 import CommentModel from '../../models/comment';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import './Comment.css'; 
 // ANT DESIGN 
 import { Button } from 'antd';
@@ -33,6 +33,9 @@ function Comment (props) {
         {/* USER INFO      */}
             <div className="comment-user-container">
                 <p className="comment-user">User Id / but needs to be user name...: {comment.userId}<span className="comment-date"></span></p>
+                <Link key={comment._id} to={``}>
+                <Button type="primary">Edit Comment</Button>
+                </Link>
                 <Button type="primary" onClick={handleDelete} danger>Delete Comment</Button>
             </div>
         </div>

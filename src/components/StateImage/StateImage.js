@@ -11,6 +11,7 @@ function StateImage (props) {
         // console.log('state data: ', stateData.nickname)
         return (
             <>
+                {/* NICKNAME */}
                 {
                     props.data !== undefined ? 
                     (<p>{props.data.nickname}</p>)
