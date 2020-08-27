@@ -1,7 +1,6 @@
 import React from 'react'; 
 import CommentModel from '../../models/comment'; 
-// import { withRouter, } from 'react-router-dom';
-// import { Form, Input, InputNumber, Button } from 'antd';
+import { Button } from 'antd';
 
 class CommentContainer extends React.Component {
     state = {
@@ -33,11 +32,11 @@ class CommentContainer extends React.Component {
      
 
     render () {
-      // console.log(`CommentContainer: ${this.props.currentUser}`)
+      console.log(`CommentContainer: ${this.props.currentUser}`)
         return (
             <>
             <form onSubmit={this.handleSubmit}>
-              <h2>Comment On Your Experience</h2>
+              <h2>How is {this.props.match.params.state} doing?</h2>
               <div>
                 <label htmlFor="title">Title</label>
                 <input onInput={this.handleChange} type="text" name="title" />
@@ -46,7 +45,7 @@ class CommentContainer extends React.Component {
                 <label htmlFor="body">Body</label>
                 <input onInput={this.handleChange} type="text" name="body" />
               </div>
-              <button type="submit">Add Comment</button>
+              <Button type="primary" onClick={this.handleSubmit}>Save</Button>
             </form>
           </>
         )

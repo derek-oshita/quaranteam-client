@@ -44,7 +44,6 @@ class App extends Component {
       <React.Fragment>
         <Nav currentUser={this.state.currentUser} logout={this.logout}/>
         <Routes setCurrentUser={this.setCurrentUser} currentUser={this.state.currentUser}/>
-
       </React.Fragment>
     )
   }

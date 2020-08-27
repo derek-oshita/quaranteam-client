@@ -21,13 +21,13 @@ function Comment (props) {
     return (
         <div className="comment-container">
         {/* TITLE */}
+        <Link key={comment._id} to={`/states/${comment.stateId}/comment/${comment._id}`}>
             <div className="comment-title-container">
                 <p className="comment-title">
-                <Link key={comment._id} to={`/states/${comment.stateId}/comment/${comment._id}`}>
                     {comment.title}
-                </Link>
                 </p>
             </div>
+        </Link>
         {/* BODY */}
             <div className="comment-body-container">
                 <p className="comment-body">
@@ -36,8 +36,7 @@ function Comment (props) {
             </div>
         {/* USER INFO      */}
             <div className="comment-user-container">
-                <p className="comment-user">User Id / but needs to be user name...: {comment.userId}<span className="comment-date"></span></p>
-
+                <p className="comment-user">Username: {comment.userId}<span className="comment-date"></span></p>
 
                 { props.currentUser === comment.userId ?
                     (   <>
