@@ -22,18 +22,13 @@ export default ({ setCurrentUser, currentUser }) => (
             : <Redirect to='/login' />
         }/>
         {/* GET COMMENT */}
-
         <Route exact path='/states/:state/comment/:id' render={ (props) =>
             currentUser
             ? <GetComment {...props} currentUser={currentUser}/>
             : <Redirect to='/login' />
         } /> 
         
-        
         {/* <Route exact path='/states/:state/comment/:id' component={GetComment} currentUser={currentUser}/> */}
-
-
-
         {/* ADD COMMENT */}
         <Route exact path='/states/:state/comment' render={ (props) =>
             currentUser
@@ -41,7 +36,17 @@ export default ({ setCurrentUser, currentUser }) => (
             : <Redirect to='/login' />
         } /> 
         {/* STATES SHOW */}
-        <Route path='/states/:state' component={StateContainer} />
+
+        <Route exact path='/states/:state/' render={ (props) =>
+            currentUser
+            ? <StateContainer {...props} currentUser={currentUser}/>
+            : <Redirect to='/login' />
+        } /> 
+
+
+        {/* <Route path='/states/:state' component={StateContainer} /> */}
+
+
         {/* STATES INDEX */}
         <Route path='/states' component={StateDataContainer} />
         {/* PROFILE */}

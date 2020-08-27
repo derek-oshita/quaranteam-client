@@ -16,6 +16,8 @@ function Comment (props) {
           .then((result) => props.history.push(`/states/${comment.stateId}`))
           .catch((err) => console.log(err));
       };
+    console.log('Comment currentUser: ', props.currentUser)
+    let currentUser = props.currentUser; 
     return (
         <div className="comment-container">
         {/* TITLE */}
@@ -35,13 +37,42 @@ function Comment (props) {
         {/* USER INFO      */}
             <div className="comment-user-container">
                 <p className="comment-user">User Id / but needs to be user name...: {comment.userId}<span className="comment-date"></span></p>
-                <Link key={comment._id} to={`/states/${comment.stateId}/comment/${comment._id}/edit`}>
-                <Button type="primary">Edit Comment</Button>
-                </Link>
-                <Button type="primary" onClick={handleDelete} danger>Delete Comment</Button>
+
+
+                { props.currentUser === comment.userId ?
+                    (   <>
+                            <Link key={comment._id} to={`/states/${comment.stateId}/comment/${comment._id}/edit`}>
+                            <Button type="primary">Edit Comment</Button>
+                            </Link>
+                            <Button type="primary" onClick={handleDelete} danger>Delete Comment</Button>
+                        </>
+                    )
+                    :
+                    (
+                        <> </>
+                    )
+                }
             </div>
         </div>
     )
 }
 
 export default withRouter(Comment); 
+
+/* 
+
+                {
+                    props.data !== undefined ? 
+                    (<p>{props.data.nickname}</p>)
+                    : 
+                    (<p>Loading...</p>)
+        
+                }
+
+                <Link key={comment._id} to={`/states/${comment.stateId}/comment/${comment._id}/edit`}>
+                <Button type="primary">Edit Comment</Button>
+                </Link>
+                <Button type="primary" onClick={handleDelete} danger>Delete Comment</Button>
+
+
+*/ 
