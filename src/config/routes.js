@@ -22,7 +22,18 @@ export default ({ setCurrentUser, currentUser }) => (
             : <Redirect to='/login' />
         }/>
         {/* GET COMMENT */}
-        <Route exact path='/states/:state/comment/:id' component={GetComment} />
+
+        <Route exact path='/states/:state/comment/:id' render={ (props) =>
+            currentUser
+            ? <GetComment {...props} currentUser={currentUser}/>
+            : <Redirect to='/login' />
+        } /> 
+        
+        
+        {/* <Route exact path='/states/:state/comment/:id' component={GetComment} currentUser={currentUser}/> */}
+
+
+
         {/* ADD COMMENT */}
         <Route exact path='/states/:state/comment' render={ (props) =>
             currentUser

@@ -1,16 +1,13 @@
 // IMPORTS
 import React from 'react';
 import Comment from '../Comment/Comment';
+import './CommentList.css'
 
+// COMMENTLIST
 function CommentList(props) {
-    console.log('CommentList comments: ', props.comments)
-    console.log('CommentList stateCode: ', props.stateCode)
-    // const commentList = props.comments.map((commentObj) => {
-    // return (
-    //     <Comment comment={commentObj} list={true} />
-    // )
+    // console.log('CommentList comments: ', props.comments)
+    // console.log('CommentList stateCode: ', props.stateCode)
     let stateComments = props.comments.filter(commentObj => commentObj.stateId === props.stateCode); 
-    // console.log('stateComments: ', stateComments);
     const commentList = stateComments.map((stateComment) => {
         return (
             <Comment comment={stateComment} />
@@ -19,9 +16,9 @@ function CommentList(props) {
   return (
     <div className="comments-container">
       {commentList}
-      {/* commentList */}
     </div>
   );
 }
 
+// EXPORTS
 export default CommentList;

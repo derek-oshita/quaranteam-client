@@ -21,7 +21,9 @@ function Comment (props) {
         {/* TITLE */}
             <div className="comment-title-container">
                 <p className="comment-title">
+                <Link key={comment._id} to={`/states/${comment.stateId}/comment/${comment._id}`}>
                     {comment.title}
+                </Link>
                 </p>
             </div>
         {/* BODY */}

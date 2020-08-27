@@ -1,0 +1,8 @@
+.comments-container {
+    width: 100vw; 
+    /* display: flex; 
+    justify-content: center; */
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
