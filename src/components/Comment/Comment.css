@@ -1,12 +1,20 @@
+.mother-comment {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .comment-container {
-    max-width: 40vw;
-    height: 41vh; 
+    width: 60vw; 
+    max-width: 60vw;
     border: 1px solid grey; 
+    border-radius: 3px;
+    margin: 15px 0 15px 0; 
 }
 
 .comment-title-container {
     border-bottom: 1px solid grey; 
-    /* background-color: #f8f8ff; */
     background-color: #2C3857; 
 }
 
@@ -15,16 +23,16 @@
     color: white; 
 }
 
-.comment-container {
-    margin: 0 10px 0 10px; 
-}
-
 .comment-body-container {
     background-color: #f8f8ff; 
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .comment-body {
-    padding: 20px 10px 20px 10px; 
+    padding: 5px 10px;
     margin-bottom: 0;
 }
 

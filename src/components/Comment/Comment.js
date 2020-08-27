@@ -19,38 +19,38 @@ function Comment (props) {
     console.log('Comment currentUser: ', props.currentUser)
     let currentUser = props.currentUser; 
     return (
-        <div className="comment-container">
-        {/* TITLE */}
-        <Link key={comment._id} to={`/states/${comment.stateId}/comment/${comment._id}`}>
-            <div className="comment-title-container">
-                <p className="comment-title">
-                    {comment.title}
-                </p>
-            </div>
-        </Link>
-        {/* BODY */}
-            <div className="comment-body-container">
-                <p className="comment-body">
-                    {comment.body}
-                </p>
-            </div>
-        {/* USER INFO      */}
-            <div className="comment-user-container">
-                <p className="comment-user">Username: {comment.userId}<span className="comment-date"></span></p>
+        <div className="mother-comment">
+            <div className="comment-container">
+            {/* TITLE */}
+            <Link key={comment._id} to={`/states/${comment.stateId}/comment/${comment._id}`}>
+                <div className="comment-title-container">
+                    <p className="comment-title">
+                        {comment.title}
+                    </p>
+                </div>
+            </Link>
+            {/* BODY */}
+                <div className="comment-body-container">
+                    <p className="comment-body">
+                        {comment.body}
+                    </p>
+                </div>
+            {/* USER INFO      */}
+                <div className="comment-user-container">
+                    <p className="comment-user">Username: {comment.userId}<span className="comment-date"></span></p>
 
-                { props.currentUser === comment.userId ?
-                    (   <>
-                            <Link key={comment._id} to={`/states/${comment.stateId}/comment/${comment._id}/edit`}>
-                            <Button type="primary">Edit Comment</Button>
-                            </Link>
-                            <Button type="primary" onClick={handleDelete} danger>Delete Comment</Button>
-                        </>
-                    )
-                    :
-                    (
-                        <> </>
-                    )
-                }
+                    { props.currentUser === comment.userId ?
+                        (   <>
+                                <Link key={comment._id} to={`/states/${comment.stateId}/comment/${comment._id}/edit`}>
+                                <Button type="primary">Edit Comment</Button>
+                                </Link>
+                                <Button type="primary" onClick={handleDelete} danger>Delete Comment</Button>
+                            </>
+                        )
+                        :
+                        ( <> </> )
+                    }
+                </div>
             </div>
         </div>
     )
@@ -58,20 +58,3 @@ function Comment (props) {
 
 export default withRouter(Comment); 
 
-/* 
-
-                {
-                    props.data !== undefined ? 
-                    (<p>{props.data.nickname}</p>)
-                    : 
-                    (<p>Loading...</p>)
-        
-                }
-
-                <Link key={comment._id} to={`/states/${comment.stateId}/comment/${comment._id}/edit`}>
-                <Button type="primary">Edit Comment</Button>
-                </Link>
-                <Button type="primary" onClick={handleDelete} danger>Delete Comment</Button>
-
-
-*/ 
