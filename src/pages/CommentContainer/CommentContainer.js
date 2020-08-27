@@ -1,7 +1,7 @@
 import React from 'react'; 
 import CommentModel from '../../models/comment'; 
-import { withRouter } from 'react-router-dom';
-import { Form, Input, InputNumber, Button } from 'antd';
+// import { withRouter, } from 'react-router-dom';
+// import { Form, Input, InputNumber, Button } from 'antd';
 
 class CommentContainer extends React.Component {
     state = {
@@ -35,7 +35,7 @@ class CommentContainer extends React.Component {
     render () {
       console.log(`CommentContainer: ${this.props.currentUser}`)
         return (
-            <div>
+            <>
             <form onSubmit={this.handleSubmit}>
               <h2>Comment On Your Experience</h2>
               <div>
@@ -48,10 +48,10 @@ class CommentContainer extends React.Component {
               </div>
               <button type="submit">Add Comment</button>
             </form>
-          </div>
+          </>
         )
     }
 }; 
 
 
-export default CommentContainer
+export default CommentContainer; 

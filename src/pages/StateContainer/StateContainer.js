@@ -39,9 +39,7 @@ class StateContainer extends React.Component {
       };
     render() {
         const stateInfo = this.state.state; 
-        // function formatDate (updatedAt) {
-        //     let updatedAt = stateInfo.lastUpdateEt; 
-        // }
+        console.log('stateInfo: ', stateInfo)
         return(
             <Layout className="layout">
                 {/* CONTENT */}

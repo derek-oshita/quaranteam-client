@@ -7,13 +7,13 @@ function StateImageList(props) {
     let stateInfo = props.stateMeta.find(stateObj => stateObj.code === props.stateCode); 
     console.log('image: ', stateInfo)
       return (
-        <React.Fragment>
+        <>
           {/* <Game game={gameObj} list={true} /> */}
        
           {/* <StateImage stateCode={props.stateCode}/> */}
           {/* <StateImage stateObj={stateObj}/> */}
           <StateImage data={stateInfo}/>
-        </React.Fragment>
+        </>
       )
   }
   

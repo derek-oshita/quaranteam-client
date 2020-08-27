@@ -1,31 +1,42 @@
 // IMPORTS
 import React from 'react';
 import CommentModel from '../../models/comment';
+import { withRouter } from 'react-router-dom';
 import './Comment.css'; 
 // ANT DESIGN 
+import { Button } from 'antd';
 
 
 // COMMENT FUNCTION - will likely need to be class based 
 function Comment (props) {
     const { comment } = props; 
+
+    const handleDelete = () => {
+         CommentModel.deleteComment(comment._id)
+          .then((result) => props.history.push(`/states/${comment.stateId}`))
+          .catch((err) => console.log(err));
+      };
     return (
         <div className="comment-container">
         {/* TITLE */}
             <div className="comment-title-container">
-                <p className="comment-title">Title of the Comment...</p>
+                <p className="comment-title">
+                    {comment.title}
+                </p>
             </div>
         {/* BODY */}
             <div className="comment-body-container">
                 <p className="comment-body">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos ab placeat eos quo nihil maxime, aliquam labore saepe quibusdam impedit totam veniam voluptate possimus deleniti. Ad adipisci maxime culpa atque.
+                    {comment.body}
                 </p>
             </div>
         {/* USER INFO      */}
             <div className="comment-user-container">
-                <p className="comment-user">Zetsubou_Billy <span className="comment-date">08/24/2020</span></p>
+                <p className="comment-user">User Id / but needs to be user name...: {comment.userId}<span className="comment-date"></span></p>
+                <Button type="primary" onClick={handleDelete} danger>Delete Comment</Button>
             </div>
         </div>
     )
 }
 
-export default Comment; 
+export default withRouter(Comment); 
