@@ -10,10 +10,15 @@ function CommentList(props) {
     //     <Comment comment={commentObj} list={true} />
     // )
     let stateComments = props.comments.filter(commentObj => commentObj.stateId === props.stateCode); 
-    console.log('stateComments: ', stateComments);
+    // console.log('stateComments: ', stateComments);
+    const commentList = stateComments.map((stateComment) => {
+        return (
+            <Comment comment={stateComment} />
+        )
+    })
   return (
     <div className="comments-container">
-      {/* {commentList} */}
+      {commentList}
       {/* commentList */}
     </div>
   );
