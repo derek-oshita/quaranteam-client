@@ -1,4 +1,6 @@
+// IMPORTS
 import React from 'react'; 
+import './StateImage.css'; 
 
 function StateImage (props) {
         // console.log('stateimage data: ', props.data)
@@ -11,15 +13,31 @@ function StateImage (props) {
         // console.log('state data: ', stateData.nickname)
         return (
             <>
-                {/* NICKNAME */}
+            {/* NAME */}
                 {
                     props.data !== undefined ? 
-                    (<p>{props.data.nickname}</p>)
+                    (<p className="state">{props.data.state}</p>)
                     : 
                     (<p>Loading...</p>)
         
                 }
-                
+            {/* NICKNAME */}
+                {
+                    props.data !== undefined ? 
+                    (<p className="nickname">"{props.data.nickname}"</p>)
+                    : 
+                    (<p>Loading...</p>)
+        
+                }
+            {/* FLAG */}
+                {
+                    props.data !== undefined ? 
+                    (<img src={props.data.state_flag_url}></img>)
+                    : 
+                    (<p>Loading...</p>)
+        
+                }
+
             </>
         )
 };

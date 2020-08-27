@@ -1,0 +1,9 @@
+.state {
+    font-size: 35px;
+    margin-bottom: 0;
+}
+
+.nickname {
+    color: grey; 
+    margin-bottom: 10px;
+}

@@ -9,7 +9,6 @@ import './StateContainer.less';
 // ANTDESIGN
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { NavLink, Link } from 'react-router-dom'; 
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 import { Card, Col, Row } from 'antd';
 import { Button } from 'antd';
 // VARIABLES
@@ -42,25 +41,23 @@ class StateContainer extends React.Component {
         const stateCode = this.state.state.state; 
         // console.log('stateInfo: ', stateInfo)
         // console.log('stateCode: ', stateCode)
-        console.log('StateContainer currentUser = ', this.props.currentUser)
+        // console.log('StateContainer currentUser = ', this.props.currentUser)
         const currentUser = this.props.currentUser; 
         return(
             <Layout className="layout">
-                {/* CONTENT */}
+            {/* CONTENT */}
                 <Content style={{ padding: '0 50px' }}>
-                {/* BREADCUMB LINKS */}
+            {/* BREADCUMB LINKS */}
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item><NavLink className="nav-link" exact to='/'>Home</NavLink></Breadcrumb.Item>
                     <Breadcrumb.Item><NavLink className="nav-link" exact to='/states'>State Data</NavLink></Breadcrumb.Item>
                     <Breadcrumb.Item><StateName abbrev={stateInfo.state}/></Breadcrumb.Item>
                 </Breadcrumb>
-                {/* DATA CARDS */}
+            {/* DATA CARDS */}
                 <div className="site-layout-content">
-                {/* <StateName abbrev={stateInfo.state} className="state-name"/>  */}
-                {/* STATEIMAGES WILL GO HERE */}
+                {/* STATEMETA */}
                     <StateMeta abbrev={stateInfo.state}/>
-
-                    {/* <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_California.svg/1200px-Flag_of_California.svg.png"></img> */}
+                {/* DATA CARDS */}
                     <div className="site-card-wrapper">
                     <Row gutter={16}>
                     <Col span={8}>
@@ -96,7 +93,7 @@ class StateContainer extends React.Component {
                     </Col>
                     </Row>
                     </div>
-                    {/* BUTTON */}
+                {/* BUTTON */}
                     <div>
                     <Link className="nav-link"  to={`/states/${stateInfo.state}/comment`}>
                     <Button type="primary">Add Comment</Button>
@@ -104,8 +101,7 @@ class StateContainer extends React.Component {
                     </div>
                 </div>
                 </Content>
-                {/* COMMENTS GO HERE */}
-                {/* <Comment /> */}
+            {/* COMMENTS GO HERE */}
                 <CommentListContainer stateCode={stateCode} currentUser={currentUser}/>
                 <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
             </Layout>

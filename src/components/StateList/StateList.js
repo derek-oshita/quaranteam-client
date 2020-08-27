@@ -15,7 +15,7 @@ function StateList (props) {
     
     {/* {stateList} */}
     <Divider orientation="left" ><span className="table-header">Periodic Table of the US</span></Divider>
-    <div className="statelist-container">
+    <div className="statelist-container animate__fadeIn animate__animated">
         <div className="statelist-table">
             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                 {stateList}
