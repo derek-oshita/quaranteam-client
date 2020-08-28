@@ -1,5 +1,7 @@
+// IMPORTS
 import axios from 'axios'; 
 
+// SET AUTH HEADER
 const setAuthHeader = (token) => {
     if (token) {
         axios.defaults.headers.common['Authorization'] = token; 
@@ -8,4 +10,5 @@ const setAuthHeader = (token) => {
     }   
 }; 
 
+// EXPORTS
 export default setAuthHeader; 

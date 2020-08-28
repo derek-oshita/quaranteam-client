@@ -7,7 +7,7 @@ import './Comment.css';
 import { Button } from 'antd';
 
 
-// COMMENT FUNCTION - will likely need to be class based 
+// COMMENT FUNCTION 
 function Comment (props) {
     const { comment } = props; 
 
@@ -56,5 +56,6 @@ function Comment (props) {
     )
 }
 
+// EXPORTS
 export default withRouter(Comment); 
 

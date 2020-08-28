@@ -1,7 +1,8 @@
+// IMPORTS
 import React, { Component } from 'react'; 
 import StateList from '../../components/StateList/StateList';
 
-
+// STATE DATA CONTAINER
 class StateDataContainer extends Component {
     state = {
         states: [], 
@@ -27,4 +28,5 @@ class StateDataContainer extends Component {
     }
 }; 
 
+// EXPORTS
 export default StateDataContainer; 

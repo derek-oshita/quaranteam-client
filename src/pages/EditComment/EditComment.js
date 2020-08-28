@@ -1,6 +1,8 @@
+// IMPORTS
 import React from 'react';
 import CommentModel from '../../models/comment';
 
+// EDIT COMMENT
 class EditComment extends React.Component {
   state = {
     title: '',
@@ -52,4 +54,5 @@ class EditComment extends React.Component {
   }
 }
 
+// EXPORTS
 export default EditComment; 

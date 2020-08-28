@@ -1,3 +1,4 @@
+// IMPORTS
 import React from 'react'; 
 import { Switch, Route, Redirect } from 'react-router-dom'; 
 import Home from '../components/Home/Home'
@@ -10,6 +11,7 @@ import EditComment from '../pages/EditComment/EditComment';
 import GetComment from '../pages/GetComment/GetComment'; 
 import UserProfile from '../components/UserProfile/UserProfile'; 
 
+// ROUTES
 export default ({ setCurrentUser, currentUser }) => (
     <Switch >
         {/* HOME */}

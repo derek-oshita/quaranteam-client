@@ -10,15 +10,9 @@ import { Button } from 'antd';
 const { Header, Content, Footer } = Layout;
 const { Meta } = Card;
 
+// STATEIMAGE
 function StateImage (props) {
-        // console.log('stateimage data: ', props.data)
         let stateData = {}; 
-        // if (props.data !== undefined) {
-        //     stateData = props.data
-        //     // stateData = {...props.data}
-        //     console.log('stateimage.js ', stateData)
-        // } 
-        // console.log('state data: ', stateData.nickname)
         return (
             <>
             {/* NAME */}
@@ -26,7 +20,7 @@ function StateImage (props) {
                     props.data !== undefined ? 
                     (<p className="state">{props.data.state}</p>)
                     : 
-                    (<p>Loading...</p>)
+                    (<p>No Data...</p>)
         
                 }
             {/* NICKNAME */}
@@ -34,7 +28,7 @@ function StateImage (props) {
                     props.data !== undefined ? 
                     (<p className="nickname">"{props.data.nickname}"</p>)
                     : 
-                    (<p>Loading...</p>)
+                    (<p>No Data...</p>)
         
                 }
             {/* FLAG */}
@@ -42,7 +36,7 @@ function StateImage (props) {
                     props.data !== undefined ? 
                     (<img className="flag" src={props.data.state_flag_url}></img>)
                     : 
-                    (<p>Loading...</p>)
+                    (<p>No Data...</p>)
                 }
             {/* TABLES */}
                     <div className="site-card-wrapper">
@@ -86,5 +80,6 @@ function StateImage (props) {
         )
 };
 
+// EXPORTS
 export default StateImage; 
 

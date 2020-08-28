@@ -65,4 +65,5 @@ class Register extends Component {
     }
 }; 
 
+// EXPORTS
 export default withRouter(Register); 

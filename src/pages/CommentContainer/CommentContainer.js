@@ -1,8 +1,10 @@
+// IMPORTS
 import React from 'react'; 
 import CommentModel from '../../models/comment'; 
 import { Button } from 'antd';
 import './CommentContainer.css'
 
+// COMMENT CONTAINER
 class CommentContainer extends React.Component {
     state = {
         title: '',
@@ -54,5 +56,5 @@ class CommentContainer extends React.Component {
     }
 }; 
 
-
+// EXPORTS
 export default CommentContainer; 

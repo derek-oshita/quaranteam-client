@@ -1,7 +1,9 @@
+// IMPORTS
 import React from 'react'; 
 import { Link } from 'react-router-dom'
 import './About.css'; 
 
+// ABOUT
 function About() {
     return (
         <section className="about-main-container">
@@ -22,4 +24,5 @@ function About() {
     )
 }; 
 
+// EXPORTS
 export default About; 

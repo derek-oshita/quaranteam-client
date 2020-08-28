@@ -4,9 +4,8 @@ import About from '../About/About';
 import reopen from './reopen.jpg'
 import './Home.css'; 
 
-// HOME COMPONENT
+// HOME
 function Home () {
-    // console.log(reopen)
     return (
         <>
         <main className="hero-main">
@@ -21,7 +20,7 @@ function Home () {
         </main>
         </>
     )
-}
+}; 
 
 // EXPORTS
 export default Home; 

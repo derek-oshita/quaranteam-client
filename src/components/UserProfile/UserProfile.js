@@ -21,7 +21,6 @@ class UserProfile extends React.Component {
                 })
             })
     }
-
     render () {
     return (
         <main className="user-profile-container">

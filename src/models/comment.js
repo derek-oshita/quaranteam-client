@@ -1,5 +1,7 @@
+// VARIABLES
 const url = 'http://localhost:4000/api/v1/comment'
 
+// COMMENT MODEL 
 class CommentModel {
     static getAllComments = () => {
       return fetch(url)
@@ -45,6 +47,7 @@ class CommentModel {
       })
         .then((response) => response.json())
     }
-  }
+  }; 
 
-  export default CommentModel; 
+// EXPORTS
+export default CommentModel; 

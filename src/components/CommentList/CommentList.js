@@ -1,7 +1,6 @@
 // IMPORTS
 import React from 'react';
 import Comment from '../Comment/Comment';
-import './CommentList.css'
 
 // COMMENTLIST
 function CommentList(props) {
@@ -12,10 +11,8 @@ function CommentList(props) {
         )
     })
   return (
-    // <div className="comments-container">
     <>
       {commentList}
-    {/* </div> */}
     </>
   );
 }

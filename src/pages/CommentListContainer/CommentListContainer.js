@@ -1,12 +1,13 @@
+// IMPORTS
 import React from 'react';
 import CommentList from '../../components/CommentList/CommentList';
 import CommentModel from '../../models/comment';
 
+// COMMENT LIST CONTAINER
 class CommentListContainer extends React.Component {
   state = {
     comments: [],
   };
-  
   componentDidMount() {
     CommentModel.getAllComments()
       .then((result) => {
@@ -20,4 +21,5 @@ class CommentListContainer extends React.Component {
   }
 }
 
+// EXPORTS
 export default CommentListContainer; 

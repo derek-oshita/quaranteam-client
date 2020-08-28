@@ -1,7 +1,9 @@
+// IMPORTS
 import React from 'react';
 import Comment from '../../components/Comment/Comment';
 import CommentModel from '../../models/comment';
 
+// GET COMMENT
 class GetComment extends React.Component {
   state = {
     comment: {},
@@ -23,4 +25,5 @@ class GetComment extends React.Component {
   }
 }
 
+// EXPORTS
 export default GetComment;

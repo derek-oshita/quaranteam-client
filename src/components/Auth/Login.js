@@ -12,13 +12,11 @@ class Login extends React.Component {
         email: '', 
         password: '', 
     }; 
-
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value, 
         }); 
     }; 
-
     handleSubmit = (event) => {
         event.preventDefault(); 
         axios.post(`${process.env.REACT_APP_API}/auth/login`, this.state)
@@ -27,7 +25,6 @@ class Login extends React.Component {
                 localStorage.setItem('id', res.data.id)
                 console.log(res)
                 this.props.setCurrentUser(res.data.token); 
-                // change this to user profile later
                 this.props.history.push('/states'); 
             })
             .catch((err) => {
@@ -36,7 +33,6 @@ class Login extends React.Component {
                 console.log(err.response.data.message); 
             }); 
     }; 
-
     render () {
         // Borrowed forms from KennyB. 
         return (

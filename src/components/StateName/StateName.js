@@ -1,5 +1,7 @@
+// IMPORTS
 import React from 'react'; 
 
+// STATENAME CONVERTER
 function StateName (props) {
     
     let newName = props.abbrev; 
@@ -243,4 +245,5 @@ function StateName (props) {
     )
 }; 
 
+// EXPORTS
 export default StateName; 
