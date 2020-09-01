@@ -47,3 +47,41 @@
 .call-to-action:hover {
     text-decoration: underline;
 }
+
+/* MEDIA QUERIES */
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (max-width: 414px) {
+    .get-h4, .post-h4 {
+        font-size: 35px;
+        margin-bottom: 0; 
+        padding: 3vh; 
+    }
+    .about-table {
+        display: flex; 
+        flex-direction: column; 
+        width: 100vw; 
+        height: 75vh; 
+    }
+    .about-table p {
+        font-size: 18px; 
+        margin: 0; 
+        padding: 2px; 
+    }
+    /* .get {
+        height: 25vh; 
+    }
+
+    .post {
+        height: 25vh; 
+    } */
+}
+
+/* // Medium devices (tablets, 768px and up) */
+/* @media (min-width: 768px) { ... } */
+
+/* // Large devices (desktops, 992px and up) */
+/* @media (min-width: 992px) { ... } */
+
+/* // Extra large devices (large desktops, 1200px and up) */
+/* @media (min-width: 1200px) { ... } */
