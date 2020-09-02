@@ -48,7 +48,7 @@ class Login extends React.Component {
                     {/* PASSWORD */}
                     <div className="form-item animate__fadeIn animate__animated">
                         <label htmlFor="password">Password: </label>
-                        <input onChange={this.handleChange} type="text" id="password" name="password" value={this.state.password} />
+                        <input onChange={this.handleChange} type="password" id="password" name="password" value={this.state.password} />
                     </div>
                     {/* SUBMIT BUTTON */}
                     {/* <button type="submit">Login</button> */}

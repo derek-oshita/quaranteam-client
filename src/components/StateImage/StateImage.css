@@ -16,3 +16,12 @@
 .data-table {
     margin-bottom: 15px;
 }
+
+/* MEDIA QUERIES */
+
+/* Small devices < 414 px in width */
+@media (max-width: 414px) {
+    .flag {
+        width: 95vw; 
+    }
+}

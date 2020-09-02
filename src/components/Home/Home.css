@@ -8,6 +8,7 @@
     margin-bottom: 10vh;
     height: 70vh; 
     width: 65vw; 
+
 }
 
 .divider {
@@ -16,7 +17,7 @@
 
 /* MEDIA QUERIES  */
 /* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 320px) {
+@media (max-width: 414px) {
     * {
         margin: 0; 
     }

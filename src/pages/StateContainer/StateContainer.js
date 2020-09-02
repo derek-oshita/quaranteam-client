@@ -42,7 +42,7 @@ class StateContainer extends React.Component {
         return(
             <Layout className="layout">
             {/* CONTENT */}
-                <Content style={{ padding: '0 50px' }}>
+                <Content style={{ padding: '0 2px' }}>
             {/* BREADCUMB LINKS */}
                 <Breadcrumb style={{ margin: '10px 0' }}>
                     <Breadcrumb.Item><NavLink className="nav-link" exact to='/'>Home</NavLink></Breadcrumb.Item>

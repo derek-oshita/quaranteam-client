@@ -27,3 +27,12 @@ nav {
     text-decoration: underline; 
     cursor: pointer; 
   }
+
+  /* MEDIA QUERIES */
+
+/* Small devices < 414 px in width */
+@media (max-width: 414px) {
+    .nav-link {
+      margin: 7px; 
+    }
+}
