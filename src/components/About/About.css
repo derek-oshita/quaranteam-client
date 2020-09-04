@@ -50,11 +50,26 @@
 
 /* MEDIA QUERIES */
 
+/* Laptops */
+@media (max-width: 1440px) {
+    .get-h4, .post-h4 {
+        font-size: 50px;
+        margin-top: 85px; 
+        padding: 3vh; 
+    }
+    .about-table p {
+        font-size: 18px; 
+        margin: 0; 
+        padding: 2px; 
+    }
+}
+
 /* Small devices (iPhone X) < 414 px in width */
 @media (max-width: 414px) {
+
     .get-h4, .post-h4 {
-        font-size: 35px;
-        margin-bottom: 0; 
+        font-size: 25px;
+        margin: 0; 
         padding: 3vh; 
     }
     .about-table {
@@ -70,16 +85,3 @@
     }
 }
 
-/* Laptops */
-@media (max-width: 1440px) {
-    .get-h4, .post-h4 {
-        font-size: 50px;
-        margin-top: 85px; 
-        padding: 3vh; 
-    }
-    .about-table p {
-        font-size: 18px; 
-        margin: 0; 
-        padding: 2px; 
-    }
-}
