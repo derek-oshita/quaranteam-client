@@ -19,7 +19,8 @@ class Login extends React.Component {
     }; 
     handleSubmit = (event) => {
         event.preventDefault(); 
-        axios.post(`${process.env.REACT_APP_API}/auth/login`, this.state)
+        // axios.post(`${process.env.REACT_APP_API}/auth/login`, this.state)
+        axios.post(`api/v1//auth/login`, this.state)
             .then((res) => {
                 console.log(res.data)
                 localStorage.setItem('id', res.data.id)
