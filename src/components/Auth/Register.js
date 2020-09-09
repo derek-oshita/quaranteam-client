@@ -67,8 +67,7 @@ class Register extends Component {
         // } else {
         //     console.log('Invalid form')
         // }
-        // axios.post(`${process.env.REACT_APP_API}/auth/register`, this.state)
-        axios.post(`api/v1/auth/register`, this.state)
+        axios.post(`${process.env.REACT_APP_API}/auth/register`, this.state)
             .then((res) => {
                 console.log(res);
                 this.props.history.push('/login');  
