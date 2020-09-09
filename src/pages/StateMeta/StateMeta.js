@@ -1,7 +1,8 @@
 // IMPORTS
 import React from 'react'; 
 import StateImageList from '../../components/StateImageList/StateImageList'; 
-const url ='http://localhost:4000/api/v1/meta'; 
+// const url ='http://localhost:4000/api/v1/meta'; 
+const url = 'https://enigmatic-garden-30320.herokuapp.com/api/v1/meta'; 
 
 // STATEMETA
 class StateMeta extends React.Component {
