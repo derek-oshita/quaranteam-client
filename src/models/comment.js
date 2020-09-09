@@ -1,5 +1,5 @@
 // VARIABLES
-const url = 'http://localhost:4000/api/v1/comment'
+const url = 'https://enigmatic-garden-30320.herokuapp.com/api/v1/comment'
 
 // COMMENT MODEL 
 class CommentModel {
