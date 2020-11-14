@@ -1,4 +1,5 @@
 // IMPORTS
+import addComas from './helper-functions'; 
 import React from 'react'; 
 import StateName from '../../components/StateName/StateName'; 
 import StateMeta from '../StateMeta/StateMeta'; 
@@ -68,7 +69,7 @@ class StateContainer extends React.Component {
                     </Col>
                     <Col span={8} className="data-table">
                         <Card title="Total Deaths:" bordered={false}>
-                        <strong>{stateInfo.death}</strong>
+                        <addComas><strong>{stateInfo.death}</strong></addComas>                        {/* <strong>{addComas(stateInfo.death)}</strong> */}
                         </Card>
                     </Col>
 

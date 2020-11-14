@@ -1,4 +1,4 @@
-.about-main-container {
+/* .about-main-container {
     height: 100vh; 
     background-color: #2C3857;
     display: flex; 
@@ -14,34 +14,60 @@
     display: flex;
     justify-content: center;
     align-items: center;
+} */
+
+.call-to-action a {
+    padding: 0; 
+    font-size: 35px; 
+}
+
+.about-p {
+    color: white; 
+    font-size: 25px; 
+    padding: 40px; 
+    margin: 0; 
 }
 
 .get {
-    width: 100%; 
-    height: 100%;
+    /* width: 100%; 
+    height: 100%; */
+    background-color: #203175; 
+    width: 62vw; 
+    height: 65vh; 
+    display: inline-block; 
+    justify-content: center; 
+    align-items: center; 
+    border: 2px solid white; 
+    border-radius: 5px; 
 }
 
 .post {
-    width: 100%; 
-    height: 100%;
+    background-color: #203175; 
+    width: 62vw; 
+    height: 65vh; 
+    display: inline-block; 
+    justify-content: center; 
+    align-items: center; 
+    border: 2px solid white; 
+    border-radius: 5px; 
 }
 
 .get-h4 {
     padding: 7vh; 
-    color: #2C3857;
-    font-size: 60px;
+    color: #FFF000; 
+    font-size: 20px; 
+    margin: 0; 
 }
 
 .post-h4 {
     padding: 7vh; 
-    color: #2C3857;
-    font-size: 60px;
+    color: #FFF000; 
+    font-size: 20px; 
+    margin: 0;
 }
 
-.about-table p {
-    padding-left: 30px;
-    padding-right: 30px;
-    font-size: 30px;
+.about-divider {
+    height: 10vh; 
 }
 
 .call-to-action:hover {
@@ -54,7 +80,7 @@
 @media (max-width: 1440px) {
     .get-h4, .post-h4 {
         font-size: 50px;
-        margin-top: 85px; 
+        /* margin-top: 85px;  */
         padding: 3vh; 
     }
     .about-table p {
@@ -67,7 +93,27 @@
 /* Small devices (iPhone X) < 414 px in width */
 @media (max-width: 414px) {
 
-    .get-h4, .post-h4 {
+    .get {
+        width: 100vw; 
+        height: 75vh; 
+    }
+
+    .get-h4 {
+        padding: 0; 
+        padding-top: 20px; 
+    }
+
+    .post {
+        width: 100vw; 
+        height: 75vh; 
+    }
+
+    .post-h4 {
+        padding: 0; 
+        padding-top: 20px; 
+    }
+
+    /* .get-h4, .post-h4 {
         font-size: 25px;
         margin: 0; 
         padding: 3vh; 
@@ -82,6 +128,8 @@
         font-size: 18px; 
         margin: 0; 
         padding: 2px; 
-    }
+    } */
+
+
 }
 
