@@ -1,5 +1,7 @@
 ## Quaranteam
 
+Website: https://quaranteam-v1-sf.herokuapp.com/
+
 Quaranteam is a full-stack application built for the sole purpose of flattening the curve during the 2020 pandemic. In a time of relentless uncertainty, it is important for us to band together and make conscious decisions driven by relevant and comprehensive data. 
 
 By relaying data from covidtracking.com, Civil.Services, and our users, we hope to provide transparency into how every state has handled the current state of affairs. 
@@ -30,8 +32,12 @@ Quaranteam separates the front-end and backend. It is important that all depende
 
 ## User Story
 
-A user is defined as anyone who creates an account and interacts with our application. Users are typically a good fit if they'd like a high-level overview of how states are handling COVID-19. They are encouraged to post feedback around this data in order to spread awareness of their own, first-hand experience. 
+A user is defined as anyone who creates an account and interacts with my application. Users will find helpful datapaoints around COVID-19 provided by Covidtracking.com to help them stay informed and metadata from Civil.Services. They are encouraged to post feedback around this data in order to spread awareness of their own, first-hand experience. 
 
 ## Wireframes / ERD
 
 - https://www.figma.com/file/0DwKd0CKZSl37ulOBYzXrE/Audiophile?node-id=0%3A1
+
+## API Repository: 
+
+- https://github.com/derek-oshita/quaranteam-api
