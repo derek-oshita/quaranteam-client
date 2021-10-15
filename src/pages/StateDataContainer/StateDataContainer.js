@@ -1,32 +1,44 @@
 // IMPORTS
-import React, { Component } from 'react'; 
-import StateList from '../../components/StateList/StateList';
+import React, { Component } from "react";
+import StateList from "../../components/StateList/StateList";
 
 // STATE DATA CONTAINER
 class StateDataContainer extends Component {
-    state = {
-        states: [], 
-    }; 
-    componentDidMount() {
-        fetch('https://api.covidtracking.com/v1/states/current.json')
-            .then((response) => (response.json()))
-            .then((data) => {
-                this.setState({
-                    states: data
-                })
-            })
-            .catch((err) => console.log(err))
-    }; 
+  state = {
+    states: [],
+  };
+  componentDidMount() {
+    fetch("StateData.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        this.setState(() => {
+          const updatedState = res;
+          return {
+            states: updatedState,
+          };
+        });
+      })
+      .catch((err) => {
+        throw new Error(err);
+      });
+  }
 
-    render() {
-        return(
-            <section>
-                {/* {console.log(this.state.states)} */}
-                <StateList states={this.state.states} />
-            </section>
-        )
-    }
-}; 
+  render() {
+    const { states } = this.state;
+    return (
+      <section>
+        <StateList states={states} />
+      </section>
+    );
+  }
+}
 
 // EXPORTS
-export default StateDataContainer; 
+export default StateDataContainer;
