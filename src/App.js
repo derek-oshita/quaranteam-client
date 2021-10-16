@@ -1,46 +1,48 @@
 // IMPORTS
-import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom'; 
-import jwt_decode from 'jwt-decode'; 
-import Nav from './components/Nav/Nav';
-import Routes from './config/routes'; 
-import setAuthHeader from './utils/setAuthHeader';
-import './App.less';
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 
-// APP 
+import Nav from "./components/Nav/Nav";
+import Routes from "./config/routes";
+import setAuthHeader from "./utils/setAuthHeader";
+import "./App.less";
+
 class App extends Component {
   state = {
-    currentUser: localStorage.getItem('token'),
-  }; 
+    currentUser: localStorage.getItem("token"),
+  };
   componentDidMount() {
-    const token = localStorage.getItem('token'); 
+    const token = localStorage.getItem("token");
     if (token) {
-      setAuthHeader(token); 
-      const decodedToken = jwt_decode(token); 
-      this.setState({currentUser: decodedToken.id})
+      setAuthHeader(token);
+      const decodedToken = jwt_decode(token);
+      this.setState({ currentUser: decodedToken.id });
     }
-  }; 
+  }
   setCurrentUser = (token) => {
-    localStorage.setItem('token', token); 
-    setAuthHeader(token); 
-    const decodedToken = jwt_decode(token); 
-    this.setState({currentUser: decodedToken.id})
-  }; 
+    localStorage.setItem("token", token);
+    setAuthHeader(token);
+    const decodedToken = jwt_decode(token);
+    this.setState({ currentUser: decodedToken.id });
+  };
   logout = () => {
-    localStorage.removeItem('token'); 
-    setAuthHeader(); 
-    this.setState({currentUser: ''}); 
-    this.props.history.push('/login'); 
-  }; 
+    localStorage.removeItem("token");
+    setAuthHeader();
+    this.setState({ currentUser: "" });
+    this.props.history.push("/login");
+  };
   render() {
     return (
       <React.Fragment>
-        <Nav currentUser={this.state.currentUser} logout={this.logout}/>
-        <Routes setCurrentUser={this.setCurrentUser} currentUser={this.state.currentUser}/>
+        <Nav currentUser={this.state.currentUser} logout={this.logout} />
+        <Routes
+          setCurrentUser={this.setCurrentUser}
+          currentUser={this.state.currentUser}
+        />
       </React.Fragment>
-    )
+    );
   }
 }
 
-// EXPORTS
 export default withRouter(App);

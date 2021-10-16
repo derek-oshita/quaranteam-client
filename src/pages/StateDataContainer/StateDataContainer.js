@@ -1,14 +1,18 @@
-// IMPORTS
 import React, { Component } from "react";
+import env from "react-dotenv";
+
 import StateList from "../../components/StateList/StateList";
 
-// STATE DATA CONTAINER
+const url =
+  "https://api.covidactnow.org/v2/states.json?apiKey=92336aa3c19944c39701f740c3e7ce63";
+
 class StateDataContainer extends Component {
   state = {
     states: [],
   };
-  componentDidMount() {
-    fetch("StateData.json", {
+  async componentDidMount() {
+    await fetch(url, {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -17,16 +21,15 @@ class StateDataContainer extends Component {
       .then((res) => {
         return res.json();
       })
-      .then((res) => {
+      .then((data) => {
         this.setState(() => {
-          const updatedState = res;
           return {
-            states: updatedState,
+            states: data,
           };
         });
       })
       .catch((err) => {
-        throw new Error(err);
+        throw new Error("StateDataContainer: ", err);
       });
   }
 
