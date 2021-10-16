@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import env from "react-dotenv";
+import { Spin, Space, Divider } from "antd";
 
 import StateList from "../../components/StateList/StateList";
+import "./StateDataContainer.less";
 
-const url =
-  "https://api.covidactnow.org/v2/states.json?apiKey=92336aa3c19944c39701f740c3e7ce63";
+const url = process.env.REACT_APP_URL;
 
 class StateDataContainer extends Component {
   state = {
@@ -33,15 +33,34 @@ class StateDataContainer extends Component {
       });
   }
 
+  /* 
+        <section>
+        <StateList states={states} />
+      </section>
+
+            <Space size="middle">
+        <Spin size="large" />
+      </Space>
+  
+  */
+
   render() {
     const { states } = this.state;
     return (
-      <section>
-        <StateList states={states} />
-      </section>
+      <>
+        <Divider orientation="left">
+          <span className="table-header">COVID-19 Data Table of the US</span>
+        </Divider>
+        {states.length !== 0 ? (
+          <StateList states={states} />
+        ) : (
+          <Space className="antd-space" size="middle">
+            <Spin size="large" />
+          </Space>
+        )}
+      </>
     );
   }
 }
 
-// EXPORTS
 export default StateDataContainer;

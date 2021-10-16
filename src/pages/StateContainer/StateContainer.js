@@ -30,7 +30,6 @@ class StateContainer extends React.Component {
     const stateInfo = this.state.state;
     const stateCode = this.state.state.state;
     const currentUser = this.props.currentUser;
-    console.log(this.props);
     return (
       <Layout className="layout">
         {/* CONTENT */}
