@@ -63,7 +63,11 @@ const RiskCard = (props) => {
                   )}`,
                 }}
               >
-                {renderRisk(props.stateInfo.riskLevels.overall, riskLevel)}
+                {/* {renderRisk(props.stateInfo.riskLevels.overall, riskLevel)} */}
+                {`${renderRisk(
+                  props.stateInfo.riskLevels.overall,
+                  riskLevel
+                )} RISK`}
               </p>
             </div>
           )}
