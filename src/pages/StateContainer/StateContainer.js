@@ -4,6 +4,8 @@ import { NavLink, Link } from "react-router-dom";
 import { Card, Col, Row } from "antd";
 import { Button } from "antd";
 
+import riskLevelToCustomData from "./CustomDataSets";
+import RiskCard from "./subcomponents/RiskCard";
 import StateName from "../../components/StateName/StateName";
 import StateMeta from "../StateMeta/StateMeta";
 import CommentListContainer from "../CommentListContainer/CommentListContainer";
@@ -78,49 +80,13 @@ class StateContainer extends React.Component {
               <StateName abbrev={stateInfo.state} />
             </Breadcrumb.Item>
           </Breadcrumb>
+
           {/* DATA CARDS */}
           <div className="site-layout-content">
             {/* STATEMETA */}
             <StateMeta abbrev={stateInfo.state} />
             {/* DATA CARDS */}
-            <div className="site-card-wrapper">
-              <Row gutter={16}>
-                <Col span={8} className="data-table">
-                  <Card title="Data Quality:" bordered={false}>
-                    <strong>{stateInfo.dataQualityGrade}</strong>
-                  </Card>
-                </Col>
-                <Col span={8} className="data-table">
-                  <Card title="Last Updated:" bordered={false}>
-                    <strong>{stateInfo.lastUpdateEt}</strong>
-                  </Card>
-                </Col>
-                <Col span={8} className="data-table">
-                  <Card title="Total Deaths:" bordered={false}>
-                    <addComas>
-                      <strong>{stateInfo.death}</strong>
-                    </addComas>{" "}
-                    {/* <strong>{addComas(stateInfo.death)}</strong> */}
-                  </Card>
-                </Col>
-
-                <Col span={8} className="data-table">
-                  <Card title="Positive Cases:" bordered={false}>
-                    <strong>{stateInfo.positive}</strong>
-                  </Card>
-                </Col>
-                <Col span={8} className="data-table">
-                  <Card title="Negative Cases:" bordered={false}>
-                    <strong>{stateInfo.negative}</strong>
-                  </Card>
-                </Col>
-                <Col span={8} className="data-table">
-                  <Card title="Total Test Results:" bordered={false}>
-                    <strong>{stateInfo.negative}</strong>
-                  </Card>
-                </Col>
-              </Row>
-            </div>
+            <RiskCard />
             {/* BUTTON */}
             <div>
               <Link
