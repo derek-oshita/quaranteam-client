@@ -33,17 +33,6 @@ class StateDataContainer extends Component {
       });
   }
 
-  /* 
-        <section>
-        <StateList states={states} />
-      </section>
-
-            <Space size="middle">
-        <Spin size="large" />
-      </Space>
-  
-  */
-
   render() {
     const { states } = this.state;
     return (

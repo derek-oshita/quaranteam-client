@@ -1,35 +1,63 @@
-// IMPORTS
-import addComas from "./helper-functions";
 import React from "react";
-import StateName from "../../components/StateName/StateName";
-import StateMeta from "../StateMeta/StateMeta";
-import Comment from "../../components/Comment/Comment";
-import CommentList from "../../components/CommentList/CommentList";
-import CommentListContainer from "../CommentListContainer/CommentListContainer";
-import "./StateContainer.less";
-// ANTDESIGN
 import { Layout, Menu, Breadcrumb } from "antd";
 import { NavLink, Link } from "react-router-dom";
 import { Card, Col, Row } from "antd";
 import { Button } from "antd";
-// VARIABLES
-const { Header, Content, Footer } = Layout;
-const { Meta } = Card;
 
-// STATE CONTAINER
+import StateName from "../../components/StateName/StateName";
+import StateMeta from "../StateMeta/StateMeta";
+import CommentListContainer from "../CommentListContainer/CommentListContainer";
+import "./StateContainer.less";
+
+const { Content, Footer } = Layout;
+const url = process.env.REACT_APP_URL;
+
 class StateContainer extends React.Component {
-  state = {
-    state: {},
-    collapsed: false,
+  constructor(props) {
+    super(props);
+    this.state = {
+      stateObj: {},
+      collapsed: false,
+    };
+  }
+
+  handleStateData = (arr, id) => {
+    return arr.find((obj) => obj.state === id);
   };
+
+  async componentDidMount() {
+    await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        const stateAbbreviation = this.props.match.params.state;
+        this.setState(() => {
+          return {
+            stateObj: this.handleStateData(data, stateAbbreviation),
+          };
+        });
+      })
+      .catch((err) => {
+        throw new Error("StateDataContainer: ", err);
+      });
+  }
 
   onCollapse = (collapsed) => {
     this.setState({ collapsed });
   };
+
   render() {
-    const stateInfo = this.state.state;
-    const stateCode = this.state.state.state;
+    const stateInfo = this.state.stateObj;
+    const stateCode = this.state.stateObj.state;
     const currentUser = this.props.currentUser;
+
     return (
       <Layout className="layout">
         {/* CONTENT */}
