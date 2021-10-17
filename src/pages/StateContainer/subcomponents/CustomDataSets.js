@@ -1,22 +1,22 @@
 // RISK LEVEL
 const riskLevelToCustomData = {
-  0: {
+  1: {
     riskLevel: "LOW",
     riskColor: "#00FF7F",
   },
-  1: {
+  2: {
     riskLevel: "MEDIUM",
     riskColor: "#FBEC5D",
   },
-  2: {
+  3: {
     riskLevel: "HIGH",
     riskColor: "#FFBF00",
   },
-  3: {
+  4: {
     riskLevel: "SUPER HIGH",
     riskColor: "#FF3131",
   },
-  4: {
+  5: {
     riskLevel: "DON'T GO!",
     riskColor: "#770737",
   },
