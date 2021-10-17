@@ -4,7 +4,6 @@ import { NavLink, Link } from "react-router-dom";
 import { Card, Col, Row } from "antd";
 import { Button } from "antd";
 
-import riskLevelToCustomData from "./CustomDataSets";
 import RiskCard from "./subcomponents/RiskCard";
 import StateName from "../../components/StateName/StateName";
 import StateMeta from "../StateMeta/StateMeta";
@@ -62,9 +61,7 @@ class StateContainer extends React.Component {
 
     return (
       <Layout className="layout">
-        {/* CONTENT */}
-        <Content style={{ padding: "0 2px" }}>
-          {/* BREADCUMB LINKS */}
+        {/* <Content style={{ padding: "0 2px" }}>
           <Breadcrumb style={{ margin: "10px 0" }}>
             <Breadcrumb.Item>
               <NavLink className="nav-link" exact to="/">
@@ -79,30 +76,20 @@ class StateContainer extends React.Component {
             <Breadcrumb.Item>
               <StateName abbrev={stateInfo.state} />
             </Breadcrumb.Item>
-          </Breadcrumb>
+          </Breadcrumb> */}
 
-          {/* DATA CARDS */}
-          <div className="site-layout-content">
-            {/* STATEMETA */}
-            <StateMeta abbrev={stateInfo.state} />
-            {/* DATA CARDS */}
-            <RiskCard />
-            {/* BUTTON */}
-            <div>
-              <Link
-                className="nav-link"
-                to={`/states/${stateInfo.state}/comment`}
-              >
-                <Button type="primary">Add Comment</Button>
-              </Link>
-            </div>
-          </div>
-        </Content>
+        {/* DATA CARDS */}
+        <div className="site-layout-content"></div>
+        {/* <StateMeta abbrev={stateInfo.state} /> */}
+        <RiskCard stateInfo={stateInfo} />
+        {/* <Link className="nav-link" to={`/states/${stateInfo.state}/comment`}>
+          <Button type="primary">Add Comment</Button>
+        </Link> */}
         {/* COMMENTS */}
+        {/* // <Footer style={{ textAlign: "center" }}>
+        //   Ant Design ©2018 Created by Ant UED
+        // </Footer> */}
         <CommentListContainer stateCode={stateCode} currentUser={currentUser} />
-        <Footer style={{ textAlign: "center" }}>
-          Ant Design ©2018 Created by Ant UED
-        </Footer>
       </Layout>
     );
   }

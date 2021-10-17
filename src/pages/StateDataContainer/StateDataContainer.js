@@ -43,7 +43,7 @@ class StateDataContainer extends Component {
         {states.length !== 0 ? (
           <StateList states={states} />
         ) : (
-          <Space className="antd-space" size="middle">
+          <Space className="space-med" size="middle">
             <Spin size="large" />
           </Space>
         )}
