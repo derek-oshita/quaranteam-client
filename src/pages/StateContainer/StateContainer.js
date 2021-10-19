@@ -50,6 +50,7 @@ class StateContainer extends React.Component {
 
   renderVaccinationCardComponent = () => {
     if (this.state.stateObj && this.state.stateObj.metrics) {
+      const stateInfo = this.state.stateObj;
       const vaxInitiated =
         this.state.stateObj.metrics.vaccinationsInitiatedRatio;
       const vaxCompleted =
@@ -58,6 +59,7 @@ class StateContainer extends React.Component {
         <VaccinationCard
           vaxInitiated={vaxInitiated}
           vaxCompleted={vaxCompleted}
+          stateInfo={stateInfo}
         />
       );
     }
@@ -76,22 +78,29 @@ class StateContainer extends React.Component {
     return (
       <Layout className="layout">
         <BreadcrumbNav stateCode={stateCode} />
-        <Divider orientation="center">DATA</Divider>
-        <Row gutter={[16, 24]}>
-          <Col span={12}>{this.renderVaccinationCardComponent()}</Col>
+        <Divider orientation="center">
+          <h2>Infections</h2>
+        </Divider>
+        <Row gutter={[0, 16]}>
           <Col span={12}>
             <RiskCard stateInfo={stateInfo} stateName={stateName} />
           </Col>
         </Row>
 
-        <CommentListContainer stateCode={stateCode} currentUser={currentUser} />
+        <Divider orientation="center">
+          <h2>Vaccinations</h2>
+        </Divider>
+        <Row>
+          <Col span={24}>{this.renderVaccinationCardComponent()}</Col>
+        </Row>
+        {/* <CommentListContainer stateCode={stateCode} currentUser={currentUser} /> */}
       </Layout>
     );
   }
 }
 
 /* 
-COMMENTED OUT CODE: 
+COMMENTED OUT CODE FOR FOOTER AND CREATE COMMENT LINK: 
 
         {<Link className="nav-link" to={`/states/${stateInfo.state}/comment`}>
           <Button type="primary">Add Comment</Button>
