@@ -1,14 +1,14 @@
 import React from "react";
-import { Layout } from "antd";
+import { Layout, Divider, Col, Row } from "antd";
 
 import RiskCard from "./StateContainerSubcomponents/RiskCard";
+import VaccinationCard from "./StateContainerSubcomponents/VaccinationCard";
 import BreadcrumbNav from "./StateContainerSubcomponents/BreadcrumbNav";
-import stateCodeToName from "../../components/HelperFunctions/stateCodeToName";
+import stateCodeToName from "../../components/Helpers/stateCodeToName";
 import CommentListContainer from "../CommentListContainer/CommentListContainer";
 
 import "./StateContainer.less";
 
-const { Content, Footer } = Layout;
 const url = process.env.REACT_APP_URL;
 
 class StateContainer extends React.Component {
@@ -61,19 +61,42 @@ class StateContainer extends React.Component {
     return (
       <Layout className="layout">
         <BreadcrumbNav stateCode={stateCode} />
-        <RiskCard stateInfo={stateInfo} stateName={stateName} />
-        {/* <Link className="nav-link" to={`/states/${stateInfo.state}/comment`}>
-          <Button type="primary">Add Comment</Button>
-        </Link> */}
-        {/* COMMENTS */}
-        {/* // <Footer style={{ textAlign: "center" }}>
-        //   Ant Design ©2018 Created by Ant UED
-        // </Footer> */}
+        <Divider orientation="center">DATA</Divider>
+        <Row gutter={[16, 24]}>
+          <Col span={12}>
+            {this.state.stateObj && this.state.stateObj.metrics && (
+              <VaccinationCard
+                vaxCompleted={
+                  this.state.stateObj.metrics.vaccinationsCompletedRatio
+                }
+                vaxInitiated={
+                  this.state.stateObj.metrics.vaccinationsInitiatedRatio
+                }
+                sup="sup"
+              />
+            )}
+          </Col>
+          <Col span={12}>
+            <RiskCard stateInfo={stateInfo} stateName={stateName} />
+          </Col>
+        </Row>
+
         <CommentListContainer stateCode={stateCode} currentUser={currentUser} />
       </Layout>
     );
   }
 }
 
-// EXPORTS
+/* 
+COMMENTED OUT CODE: 
+
+        {<Link className="nav-link" to={`/states/${stateInfo.state}/comment`}>
+          <Button type="primary">Add Comment</Button>
+        </Link> }
+
+        {<Footer style={{ textAlign: "center" }}>
+        //   Ant Design ©2018 Created by Ant UED
+        </Footer> }
+*/
+
 export default StateContainer;

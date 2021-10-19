@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Card, Spin, Space } from "antd";
 
-import CustomDataSets from "./CustomDataSets";
+import CustomDataSets from "../../../components/Helpers/CustomDataSets";
 import "./RiskCard.less";
-import { render } from "@testing-library/react";
 
 const riskLevel = "riskLevel",
   riskColor = "riskColor";
@@ -12,23 +11,25 @@ const riskLevel = "riskLevel",
 
 Cases: 
 
-daily new
+DAILY NEW
 
 metrics.caseDensity
 
-infection rate
+INFECTION RATE
 
 metrics.infectionRate
 
-% vaccinated
+% VACCINATED
 
-% first dose
+FIRST DOSE
 
 metrics.vaccinationsInitiatedRatio
 
-% fully vaccinated
+FULLY
 
 metrics.vaccinationsCompletedRatio
+
+ICU
 
 */
 
