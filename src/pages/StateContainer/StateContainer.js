@@ -48,6 +48,21 @@ class StateContainer extends React.Component {
     return arr.find((obj) => obj.state === id);
   };
 
+  renderVaccinationCardComponent = () => {
+    if (this.state.stateObj && this.state.stateObj.metrics) {
+      const vaxInitiated =
+        this.state.stateObj.metrics.vaccinationsInitiatedRatio;
+      const vaxCompleted =
+        this.state.stateObj.metrics.vaccinationsCompletedRatio;
+      return (
+        <VaccinationCard
+          vaxInitiated={vaxInitiated}
+          vaxCompleted={vaxCompleted}
+        />
+      );
+    }
+  };
+
   onCollapse = (collapsed) => {
     this.setState({ collapsed });
   };
@@ -63,19 +78,7 @@ class StateContainer extends React.Component {
         <BreadcrumbNav stateCode={stateCode} />
         <Divider orientation="center">DATA</Divider>
         <Row gutter={[16, 24]}>
-          <Col span={12}>
-            {this.state.stateObj && this.state.stateObj.metrics && (
-              <VaccinationCard
-                vaxCompleted={
-                  this.state.stateObj.metrics.vaccinationsCompletedRatio
-                }
-                vaxInitiated={
-                  this.state.stateObj.metrics.vaccinationsInitiatedRatio
-                }
-                sup="sup"
-              />
-            )}
-          </Col>
+          <Col span={12}>{this.renderVaccinationCardComponent()}</Col>
           <Col span={12}>
             <RiskCard stateInfo={stateInfo} stateName={stateName} />
           </Col>
