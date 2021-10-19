@@ -12,6 +12,7 @@
     "babel-plugin-import": "^1.13.0",
     "craco-less": "^1.17.0",
     "jwt-decode": "^2.2.0",
+    "moment": "^2.29.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-dotenv": "^0.1.3",

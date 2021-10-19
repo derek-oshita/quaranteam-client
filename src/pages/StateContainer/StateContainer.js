@@ -1,10 +1,11 @@
 import React from "react";
-import { Layout, Divider, Col, Row } from "antd";
+import { Layout, Divider, Col, Row, PageHeader } from "antd";
 
 import RiskCard from "./StateContainerSubcomponents/RiskCard";
 import VaccinationCard from "./StateContainerSubcomponents/VaccinationCard";
 import BreadcrumbNav from "./StateContainerSubcomponents/BreadcrumbNav";
 import stateCodeToName from "../../components/Helpers/stateCodeToName";
+import formatDate from "../../components/Helpers/formatDate";
 import CommentListContainer from "../CommentListContainer/CommentListContainer";
 
 import "./StateContainer.less";
@@ -75,9 +76,26 @@ class StateContainer extends React.Component {
     const stateName = stateCodeToName(stateCode);
     const currentUser = this.props.currentUser;
 
+    console.log(stateInfo);
+
+    // if (stateInfo && stateInfo.lastUpdatedDate) {
+    //   console.log(formatDate(stateInfo.lastUpdatedDate, ""));
+    // }
+
     return (
       <Layout className="layout">
         <BreadcrumbNav stateCode={stateCode} />
+        <Row>
+          <Col span={8}>
+            <PageHeader
+              className="site-page-header"
+              onBack={() => null}
+              title={stateName}
+              subTitle={stateInfo && stateInfo.lastUpdatedDate}
+            />
+            ,
+          </Col>
+        </Row>
         <Divider orientation="center">
           <h2>Infections</h2>
         </Divider>

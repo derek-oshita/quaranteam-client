@@ -2,6 +2,9 @@ import React from "react";
 import { Tooltip, Progress, Row, Col } from "antd";
 
 const VaccinationCard = (props) => {
+  /* 
+  A SECTION THAT TAKES GEOLOCATION AND FINDS VACCINATIONS NEAR THEM
+  */
   const { vaxCompleted, vaxInitiated } = props;
   const { vaccinesAdministered } = props.stateInfo.actuals;
   console.log(props);
@@ -32,6 +35,7 @@ const VaccinationCard = (props) => {
         </Col>
         <Col span={12}>
           <Tooltip>
+            Received First Dose:
             <Progress
               type="circle"
               percent={changeDecimalToPercentage(vaxInitiated)}
