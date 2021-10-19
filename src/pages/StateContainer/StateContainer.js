@@ -1,13 +1,11 @@
 import React from "react";
-import { Layout, Menu, Breadcrumb } from "antd";
-import { NavLink, Link } from "react-router-dom";
-import { Card, Col, Row } from "antd";
-import { Button } from "antd";
+import { Layout } from "antd";
 
-import RiskCard from "./subcomponents/RiskCard";
-import StateName from "../../components/StateName/StateName";
-import StateMeta from "../StateMeta/StateMeta";
+import RiskCard from "./StateContainerSubcomponents/RiskCard";
+import BreadcrumbNav from "./StateContainerSubcomponents/BreadcrumbNav";
+import stateCodeToName from "../../components/HelperFunctions/stateCodeToName";
 import CommentListContainer from "../CommentListContainer/CommentListContainer";
+
 import "./StateContainer.less";
 
 const { Content, Footer } = Layout;
@@ -21,10 +19,6 @@ class StateContainer extends React.Component {
       collapsed: false,
     };
   }
-
-  handleStateData = (arr, id) => {
-    return arr.find((obj) => obj.state === id);
-  };
 
   async componentDidMount() {
     await fetch(url, {
@@ -50,6 +44,10 @@ class StateContainer extends React.Component {
       });
   }
 
+  handleStateData = (arr, id) => {
+    return arr.find((obj) => obj.state === id);
+  };
+
   onCollapse = (collapsed) => {
     this.setState({ collapsed });
   };
@@ -57,31 +55,13 @@ class StateContainer extends React.Component {
   render() {
     const stateInfo = this.state.stateObj;
     const stateCode = this.state.stateObj.state;
+    const stateName = stateCodeToName(stateCode);
     const currentUser = this.props.currentUser;
 
     return (
       <Layout className="layout">
-        {/* <Content style={{ padding: "0 2px" }}>
-          <Breadcrumb style={{ margin: "10px 0" }}>
-            <Breadcrumb.Item>
-              <NavLink className="nav-link" exact to="/">
-                Home
-              </NavLink>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <NavLink className="nav-link" exact to="/states">
-                State Data
-              </NavLink>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <StateName abbrev={stateInfo.state} />
-            </Breadcrumb.Item>
-          </Breadcrumb> */}
-
-        {/* DATA CARDS */}
-        <div className="site-layout-content"></div>
-        {/* <StateMeta abbrev={stateInfo.state} /> */}
-        <RiskCard stateInfo={stateInfo} />
+        <BreadcrumbNav stateCode={stateCode} />
+        <RiskCard stateInfo={stateInfo} stateName={stateName} />
         {/* <Link className="nav-link" to={`/states/${stateInfo.state}/comment`}>
           <Button type="primary">Add Comment</Button>
         </Link> */}

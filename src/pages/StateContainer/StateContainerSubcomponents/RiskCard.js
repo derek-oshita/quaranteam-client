@@ -38,8 +38,6 @@ const renderRisk = (riskLevelInteger, param) => {
 
 const RiskCard = (props) => {
   const { state } = props.stateInfo;
-
-  console.log(props);
   return (
     <div className="site-card-border-less-wrapper">
       <Card
@@ -63,7 +61,6 @@ const RiskCard = (props) => {
                   )}`,
                 }}
               >
-                {/* {renderRisk(props.stateInfo.riskLevels.overall, riskLevel)} */}
                 {`${renderRisk(
                   props.stateInfo.riskLevels.overall,
                   riskLevel
