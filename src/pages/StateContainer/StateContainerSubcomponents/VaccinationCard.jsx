@@ -1,5 +1,7 @@
 import React from "react";
-import { Tooltip, Progress, Row, Col } from "antd";
+import { Tooltip, Progress, Row, Col, Card } from "antd";
+
+import "./VaccinationCard.less";
 
 const VaccinationCard = (props) => {
   /* 
@@ -7,46 +9,52 @@ const VaccinationCard = (props) => {
   */
   const { vaxCompleted, vaxInitiated } = props;
   const { vaccinesAdministered } = props.stateInfo.actuals;
+  const { state } = props.stateInfo;
   console.log(props);
   return (
-    <>
+    <div className="vaccination-card-container">
       <Tooltip
         title={`Total Vaccines Administered: ${addCommasToNumber(
           vaccinesAdministered
         )}`}
       >
-        <Progress
-          percent={changeDecimalToPercentage(vaxInitiated)}
-          success={{ percent: changeDecimalToPercentage(vaxCompleted) }}
-          strokeLinecap="square"
-        />
+        <Card title={`${state} Vaccination Progress`}>
+          <Progress
+            percent={changeDecimalToPercentage(vaxInitiated)}
+            success={{ percent: changeDecimalToPercentage(vaxCompleted) }}
+            strokeLinecap="square"
+          />
+        </Card>
       </Tooltip>
+
       <Row>
         <Col span={12}>
           <Tooltip>
-            Fully Vaccinated:
-            <Progress
-              type="circle"
-              percent={changeDecimalToPercentage(vaxCompleted)}
-              strokeLinecap="square"
-              strokeColor="#87d068"
-            />
+            <Card title="Fully Vaccinated">
+              <Progress
+                type="circle"
+                percent={changeDecimalToPercentage(vaxCompleted)}
+                strokeLinecap="square"
+                strokeColor="#87d068"
+              />
+            </Card>
           </Tooltip>
         </Col>
         <Col span={12}>
           <Tooltip>
-            Received First Dose:
-            <Progress
-              type="circle"
-              percent={changeDecimalToPercentage(vaxInitiated)}
-              strokeLinecap="square"
-              // format={() => "First Dose"}
-              strokeColor="108ee9"
-            />
+            <Card title="Recieved First Dose">
+              <Progress
+                type="circle"
+                percent={changeDecimalToPercentage(vaxInitiated)}
+                strokeLinecap="square"
+                // format={() => "First Dose"}
+                strokeColor="108ee9"
+              />
+            </Card>
           </Tooltip>
         </Col>
       </Row>
-    </>
+    </div>
   );
 };
 
