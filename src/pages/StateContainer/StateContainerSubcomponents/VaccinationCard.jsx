@@ -8,8 +8,10 @@ const VaccinationCard = (props) => {
   A SECTION THAT TAKES GEOLOCATION AND FINDS VACCINATIONS NEAR THEM
   */
   const { vaxCompleted, vaxInitiated } = props;
-  const { vaccinesAdministered } = props.stateInfo.actuals;
+  const { vaccinesAdministered, vaccinationsInitiated, vaccinationsCompleted } =
+    props.stateInfo.actuals;
   const { state } = props.stateInfo;
+  console.log(props.stateInfo);
   return (
     <div className="vaccination-card-container">
       <div className="vaccination-card">
@@ -26,10 +28,13 @@ const VaccinationCard = (props) => {
             />
           </Card>
         </Tooltip>
-
         <Row>
           <Col span={12}>
-            <Tooltip>
+            <Tooltip
+              title={`Total Fully Vaccinated: ${addCommasToNumber(
+                vaccinationsCompleted
+              )}`}
+            >
               <Card title="Fully Vaccinated">
                 <Progress
                   type="circle"
@@ -41,7 +46,11 @@ const VaccinationCard = (props) => {
             </Tooltip>
           </Col>
           <Col span={12}>
-            <Tooltip>
+            <Tooltip
+              title={`Total Received First Dose: ${addCommasToNumber(
+                vaccinationsInitiated
+              )}`}
+            >
               <Card title="Recieved First Dose">
                 <Progress
                   type="circle"
