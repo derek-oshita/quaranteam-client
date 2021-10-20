@@ -29,22 +29,40 @@ const customDataObj = [
 const RiskMeter = (props) => {
   console.log("riskMeter", props.stateInfo);
 
-  //   const { overall } = props.stateInfo.riskLevels;
+  const { overall } = props.stateInfo.riskLevels;
 
   return (
     <Card>
       {/* <Button style={{ backgroundColor: "#FF3131" }}>Button</Button> */}
-      {renderRiskLevelButtons(customDataObj)}
+      {renderRiskLevelButtons(customDataObj, overall)}
     </Card>
   );
 };
 
 const renderRiskLevelButtons = (arr, overallRisk) => {
-  const buttons = arr.map((obj) => {
+  const buttons = arr.map((obj, idx) => {
+    if (overallRisk === idx + 1) {
+      return (
+        <div className="risk-meter-btn-div">
+          <Button
+            id="overall-risk-btn"
+            className="risk-meter-btn"
+            style={{ backgroundColor: `${obj.riskColor}` }}
+          >
+            <span style={{ color: "white" }}>{obj.riskLevel}</span>
+          </Button>
+        </div>
+      );
+    }
     return (
-      <Button style={{ backgroundColor: `${obj.riskColor}` }}>
-        <span style={{ color: "white" }}>{obj.riskLevel}</span>
-      </Button>
+      <div className="risk-meter-btn-div">
+        <Button
+          className="risk-meter-btn"
+          style={{ backgroundColor: `${obj.riskColor}` }}
+        >
+          <span style={{ color: "white" }}>{obj.riskLevel}</span>
+        </Button>
+      </div>
     );
   });
 
