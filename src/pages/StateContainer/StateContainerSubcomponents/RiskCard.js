@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card, Spin, Space } from "antd";
 
 import CustomDataSets from "../../../components/Helpers/CustomDataSets";
+import RiskMeter from "./RiskMeter";
 import "./RiskCard.less";
 
 const riskLevel = "riskLevel",
@@ -40,10 +41,13 @@ const renderRisk = (riskLevelInteger, param) => {
 };
 
 const RiskCard = (props) => {
+  const { stateInfo } = props;
   const { state } = props.stateInfo;
+
   return (
     <div className="site-card-border-less-wrapper">
-      <Card
+      <RiskMeter stateInfo={stateInfo} />
+      {/* <Card
         className="risk-card-component"
         title={state}
         bordered={false}
@@ -72,7 +76,7 @@ const RiskCard = (props) => {
             </div>
           )}
         </div>
-      </Card>
+      </Card> */}
     </div>
   );
 };

@@ -11,10 +11,10 @@ const VaccinationCard = (props) => {
   const { vaccinesAdministered, vaccinationsInitiated, vaccinationsCompleted } =
     props.stateInfo.actuals;
   const { state } = props.stateInfo;
-  console.log(props.stateInfo);
   return (
     <div className="vaccination-card-container">
       <div className="vaccination-card">
+        {/* PROGRESS BAR */}
         <Tooltip
           title={`Total Vaccines Administered: ${addCommasToNumber(
             vaccinesAdministered
@@ -29,6 +29,7 @@ const VaccinationCard = (props) => {
           </Card>
         </Tooltip>
         <Row>
+          {/* FULLY VACCINATED WHEEL */}
           <Col span={12}>
             <Tooltip
               title={`Total Fully Vaccinated: ${addCommasToNumber(
@@ -45,6 +46,7 @@ const VaccinationCard = (props) => {
               </Card>
             </Tooltip>
           </Col>
+          {/* RECEIVED FIRST DOSE WHEEL */}
           <Col span={12}>
             <Tooltip
               title={`Total Received First Dose: ${addCommasToNumber(
@@ -56,7 +58,6 @@ const VaccinationCard = (props) => {
                   type="circle"
                   percent={changeDecimalToPercentage(vaxInitiated)}
                   strokeLinecap="square"
-                  // format={() => "First Dose"}
                   strokeColor="108ee9"
                 />
               </Card>
