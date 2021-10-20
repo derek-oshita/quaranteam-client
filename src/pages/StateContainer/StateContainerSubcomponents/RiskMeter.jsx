@@ -29,12 +29,12 @@ const customDataObj = [
 const RiskMeter = (props) => {
   console.log("riskMeter", props.stateInfo);
 
-  const { overall } = props.stateInfo.riskLevels;
+  //   const { overall } = props.stateInfo.riskLevels;
 
   return (
     <Card>
       {/* <Button style={{ backgroundColor: "#FF3131" }}>Button</Button> */}
-      {renderRiskLevelButtons(customDataObj, overall)}
+      {renderRiskLevelButtons(customDataObj, 3)}
     </Card>
   );
 };
