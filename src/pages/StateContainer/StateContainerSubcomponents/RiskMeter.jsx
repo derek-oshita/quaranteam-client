@@ -28,6 +28,9 @@ const customDataObj = [
 
 const RiskMeter = (props) => {
   console.log("riskMeter", props.stateInfo);
+
+  //   const { overall } = props.stateInfo.riskLevels;
+
   return (
     <Card>
       {/* <Button style={{ backgroundColor: "#FF3131" }}>Button</Button> */}
@@ -36,9 +39,13 @@ const RiskMeter = (props) => {
   );
 };
 
-const renderRiskLevelButtons = (arr) => {
+const renderRiskLevelButtons = (arr, overallRisk) => {
   const buttons = arr.map((obj) => {
-    return <Button>{obj.riskLevel}</Button>;
+    return (
+      <Button style={{ backgroundColor: `${obj.riskColor}` }}>
+        <span style={{ color: "white" }}>{obj.riskLevel}</span>
+      </Button>
+    );
   });
 
   return buttons;
