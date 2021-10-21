@@ -58,7 +58,7 @@ class RiskMeter extends Component {
   render() {
     console.log("riskmeter", this.props);
     return (
-      <Card>
+      <Card className="risk-meter-card">
         {this.renderRiskLevelButtons(
           customDataObj,
           this.props.stateInfo.riskLevels?.overall
