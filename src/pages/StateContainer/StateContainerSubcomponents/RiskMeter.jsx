@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { Card, Button } from "antd";
+import { Card, Button, Divider } from "antd";
+import { WarningOutlined } from "@ant-design/icons";
 
+import stateCodeToName from "../../../utils/stateCodeToName";
 import "./RiskMeter.less";
 
 const customDataObj = [
@@ -59,6 +61,14 @@ class RiskMeter extends Component {
     console.log("riskmeter", this.props);
     return (
       <Card className="risk-meter-card">
+        <div className="risk-meter-state-header-div">
+          <span className="risk-meter-header">
+            {" "}
+            <WarningOutlined id="risk-warning-icon" />{" "}
+            {stateCodeToName(this.props.stateInfo.state)}
+          </span>
+        </div>
+        <Divider />
         {this.renderRiskLevelButtons(
           customDataObj,
           this.props.stateInfo.riskLevels?.overall

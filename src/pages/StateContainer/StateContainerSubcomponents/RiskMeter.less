@@ -1,4 +1,8 @@
-@medium: 20em;
+@primary-blue: #203175;
+
+@smaller: 2em;
+@small: 3em;
+@xtra-large: 26em;
 @sm-margin: 0.25em;
 
 .risk-meter-btn {
@@ -8,16 +12,27 @@
 }
 
 .risk-meter-card {
-  width: @medium;
-  height: @medium;
+  margin: 0;
+  width: @xtra-large;
+  height: @xtra-large;
   border: 1px solid #efefef;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
 }
 
 .risk-meter-btn-div {
   margin-top: @sm-margin;
 }
 
+.risk-meter-header {
+  font-size: @smaller;
+}
+
+.risk-meter-state-header-div {
+  width: 100%;
+  height: @small;
+}
+
 #overall-risk-btn {
   width: 15em;
-  height: 3em;
+  height: @small;
 }

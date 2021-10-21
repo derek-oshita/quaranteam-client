@@ -4,7 +4,7 @@ import { Layout, Divider, Col, Row, PageHeader } from "antd";
 import RiskCard from "./StateContainerSubcomponents/RiskCard";
 import VaccinationCard from "./StateContainerSubcomponents/VaccinationCard";
 import BreadcrumbNav from "./StateContainerSubcomponents/BreadcrumbNav";
-import stateCodeToName from "../../components/Helpers/stateCodeToName";
+import stateCodeToName from "../../utils/stateCodeToName";
 import formatDate from "../../components/Helpers/formatDate";
 import CommentListContainer from "../CommentListContainer/CommentListContainer";
 
