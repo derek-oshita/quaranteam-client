@@ -5,7 +5,7 @@ import RiskCard from "./StateContainerSubcomponents/RiskCard";
 import VaccinationCard from "./StateContainerSubcomponents/VaccinationCard";
 import BreadcrumbNav from "./StateContainerSubcomponents/BreadcrumbNav";
 import stateCodeToName from "../../utils/stateCodeToName";
-import formatDate from "../../components/Helpers/formatDate";
+import formatDate from "../../utils/formatDate";
 import CommentListContainer from "../CommentListContainer/CommentListContainer";
 
 import "./StateContainer.less";

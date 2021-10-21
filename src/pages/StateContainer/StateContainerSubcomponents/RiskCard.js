@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Spin, Space } from "antd";
 
-import CustomDataSets from "../../../components/Helpers/CustomDataSets";
+import CustomDataSets from "../../../utils/CustomDataSets";
 import RiskMeter from "./RiskMeter";
 import "./RiskCard.less";
 
