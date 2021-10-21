@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Card, Button } from "antd";
 
 import "./RiskMeter.less";
@@ -26,26 +26,25 @@ const customDataObj = [
   },
 ];
 
-const RiskMeter = (props) => {
-  console.log("riskMeter", props.stateInfo);
-
-  //   const { overall } = props.stateInfo.riskLevels;
-
-  return (
-    <Card>
-      {/* <Button style={{ backgroundColor: "#FF3131" }}>Button</Button> */}
-      {renderRiskLevelButtons(customDataObj, 3)}
-    </Card>
-  );
-};
-
-const renderRiskLevelButtons = (arr, overallRisk) => {
-  const buttons = arr.map((obj, idx) => {
-    if (overallRisk === idx + 1) {
+class RiskMeter extends Component {
+  renderRiskLevelButtons = (arr, overallRisk) => {
+    const buttons = arr.map((obj, idx) => {
+      if (overallRisk === idx + 1) {
+        return (
+          <div className="risk-meter-btn-div">
+            <Button
+              id="overall-risk-btn"
+              className="risk-meter-btn"
+              style={{ backgroundColor: `${obj.riskColor}` }}
+            >
+              <span style={{ color: "white" }}>{obj.riskLevel}</span>
+            </Button>
+          </div>
+        );
+      }
       return (
         <div className="risk-meter-btn-div">
           <Button
-            id="overall-risk-btn"
             className="risk-meter-btn"
             style={{ backgroundColor: `${obj.riskColor}` }}
           >
@@ -53,20 +52,20 @@ const renderRiskLevelButtons = (arr, overallRisk) => {
           </Button>
         </div>
       );
-    }
+    });
+    return buttons;
+  };
+  render() {
+    console.log("riskmeter", this.props);
     return (
-      <div className="risk-meter-btn-div">
-        <Button
-          className="risk-meter-btn"
-          style={{ backgroundColor: `${obj.riskColor}` }}
-        >
-          <span style={{ color: "white" }}>{obj.riskLevel}</span>
-        </Button>
-      </div>
+      <Card>
+        {this.renderRiskLevelButtons(
+          customDataObj,
+          this.props.stateInfo.riskLevels?.overall
+        )}
+      </Card>
     );
-  });
-
-  return buttons;
-};
+  }
+}
 
 export default RiskMeter;
