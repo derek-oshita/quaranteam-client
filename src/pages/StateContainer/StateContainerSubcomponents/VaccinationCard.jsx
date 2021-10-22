@@ -1,6 +1,8 @@
 import React from "react";
-import { Tooltip, Progress, Row, Col, Card } from "antd";
+import { Tooltip, Progress, Row, Col, Card, Divider } from "antd";
+import { SafetyCertificateOutlined } from "@ant-design/icons";
 
+import stateCodetoName from "../../../utils/stateCodeToName";
 import "./VaccinationCard.less";
 
 const VaccinationCard = (props) => {
@@ -20,7 +22,13 @@ const VaccinationCard = (props) => {
             vaccinesAdministered
           )}`}
         >
-          <Card title={`${state} Vaccination Progress`}>
+          <Card>
+            <div className="vaccination-header-div">
+              <span className="vaccination-header">
+                <SafetyCertificateOutlined /> {stateCodetoName(state)}{" "}
+              </span>
+            </div>
+            <Divider />
             <Progress
               percent={changeDecimalToPercentage(vaxInitiated)}
               success={{ percent: changeDecimalToPercentage(vaxCompleted) }}
