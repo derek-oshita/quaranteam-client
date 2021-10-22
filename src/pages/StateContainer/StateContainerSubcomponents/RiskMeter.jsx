@@ -58,7 +58,6 @@ class RiskMeter extends Component {
     return buttons;
   };
   render() {
-    console.log("riskmeter", this.props);
     return (
       <Card className="risk-meter-card">
         <div className="risk-meter-state-header-div">

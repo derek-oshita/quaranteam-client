@@ -1,6 +1,10 @@
 import React from "react";
 import { Tooltip, Progress, Row, Col, Card, Divider } from "antd";
-import { SafetyCertificateOutlined } from "@ant-design/icons";
+import {
+  SafetyCertificateOutlined,
+  MehOutlined,
+  SmileOutlined,
+} from "@ant-design/icons";
 
 import stateCodetoName from "../../../utils/stateCodeToName";
 import "./VaccinationCard.less";
@@ -9,10 +13,22 @@ const VaccinationCard = (props) => {
   /* 
   A SECTION THAT TAKES GEOLOCATION AND FINDS VACCINATIONS NEAR THEM
   */
+
   const { vaxCompleted, vaxInitiated } = props;
+  const { state } = props.stateInfo;
   const { vaccinesAdministered, vaccinationsInitiated, vaccinationsCompleted } =
     props.stateInfo.actuals;
-  const { state } = props.stateInfo;
+
+  const totalVaccinationIcon = <SafetyCertificateOutlined />,
+    receivedFirstDoseIcon = <MehOutlined />,
+    fullyVaccinatedIcon = <SmileOutlined />;
+
+  const vaccinationProgressHeader = `${stateCodetoName(
+      state
+    )} Vaccination Progress`,
+    fullyVaccinatedHeader = "Fully Vaccinated",
+    receivedFirstDoseHeader = "Received First Dose";
+
   return (
     <div className="vaccination-card-container">
       <div className="vaccination-card">
@@ -23,11 +39,10 @@ const VaccinationCard = (props) => {
           )}`}
         >
           <Card>
-            <div className="vaccination-header-div">
-              <span className="vaccination-header">
-                <SafetyCertificateOutlined /> {stateCodetoName(state)}{" "}
-              </span>
-            </div>
+            {renderHeaderWithIcon(
+              totalVaccinationIcon,
+              vaccinationProgressHeader
+            )}
             <Divider />
             <Progress
               percent={changeDecimalToPercentage(vaxInitiated)}
@@ -44,7 +59,12 @@ const VaccinationCard = (props) => {
                 vaccinationsCompleted
               )}`}
             >
-              <Card title="Fully Vaccinated">
+              <Card>
+                {renderHeaderWithIcon(
+                  fullyVaccinatedIcon,
+                  fullyVaccinatedHeader
+                )}
+                <Divider />
                 <Progress
                   type="circle"
                   percent={changeDecimalToPercentage(vaxCompleted)}
@@ -61,7 +81,12 @@ const VaccinationCard = (props) => {
                 vaccinationsInitiated
               )}`}
             >
-              <Card title="Recieved First Dose">
+              <Card>
+                {renderHeaderWithIcon(
+                  receivedFirstDoseIcon,
+                  receivedFirstDoseHeader
+                )}
+                <Divider />
                 <Progress
                   type="circle"
                   percent={changeDecimalToPercentage(vaxInitiated)}
@@ -73,6 +98,16 @@ const VaccinationCard = (props) => {
           </Col>
         </Row>
       </div>
+    </div>
+  );
+};
+
+const renderHeaderWithIcon = (icon, headerString) => {
+  return (
+    <div className="vaccination-header-div">
+      <span className="vaccination-header">
+        {icon} {headerString}{" "}
+      </span>
     </div>
   );
 };
