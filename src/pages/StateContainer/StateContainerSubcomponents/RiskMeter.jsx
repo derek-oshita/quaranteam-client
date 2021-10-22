@@ -2,31 +2,31 @@ import React, { Component } from "react";
 import { Card, Button, Divider } from "antd";
 import { WarningOutlined } from "@ant-design/icons";
 
-import stateCodeToName from "../../../utils/stateCodeToName";
 import "./RiskMeter.less";
 
-const customDataObj = [
-  {
-    riskLevel: "LOW",
-    riskColor: "#00FF7F",
-  },
-  {
-    riskLevel: "MEDIUM",
-    riskColor: "#FBEC5D",
-  },
-  {
-    riskLevel: "HIGH",
-    riskColor: "#FFBF00",
-  },
-  {
-    riskLevel: "SEVERE",
-    riskColor: "#FF3131",
-  },
-  {
-    riskLevel: "DON'T GO!",
-    riskColor: "#770737",
-  },
-];
+const riskMeterHeader = "Risk Meter",
+  customDataObj = [
+    {
+      riskLevel: "LOW",
+      riskColor: "#00FF7F",
+    },
+    {
+      riskLevel: "MEDIUM",
+      riskColor: "#FBEC5D",
+    },
+    {
+      riskLevel: "HIGH",
+      riskColor: "#FFBF00",
+    },
+    {
+      riskLevel: "SEVERE",
+      riskColor: "#FF3131",
+    },
+    {
+      riskLevel: "DON'T GO!",
+      riskColor: "#770737",
+    },
+  ];
 
 class RiskMeter extends Component {
   renderRiskLevelButtons = (arr, overallRisk) => {
@@ -63,8 +63,7 @@ class RiskMeter extends Component {
         <div className="risk-meter-state-header-div">
           <span className="risk-meter-header">
             {" "}
-            <WarningOutlined id="risk-warning-icon" />{" "}
-            {stateCodeToName(this.props.stateInfo.state)}
+            <WarningOutlined id="risk-warning-icon" /> {riskMeterHeader}
           </span>
         </div>
         <Divider />

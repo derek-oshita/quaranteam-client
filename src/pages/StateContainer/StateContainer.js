@@ -4,9 +4,10 @@ import { Layout, Divider, Col, Row, PageHeader } from "antd";
 import RiskCard from "./StateContainerSubcomponents/RiskCard";
 import VaccinationCard from "./StateContainerSubcomponents/VaccinationCard";
 import BreadcrumbNav from "./StateContainerSubcomponents/BreadcrumbNav";
+import InfectionCard from "./StateContainerSubcomponents/InfectionCard";
 import stateCodeToName from "../../utils/stateCodeToName";
-import formatDate from "../../utils/formatDate";
-import CommentListContainer from "../CommentListContainer/CommentListContainer";
+// import formatDate from "../../utils/formatDate";
+// import CommentListContainer from "../CommentListContainer/CommentListContainer";
 
 import "./StateContainer.less";
 
@@ -74,19 +75,15 @@ class StateContainer extends React.Component {
     const stateInfo = this.state.stateObj;
     const stateCode = this.state.stateObj.state;
     const stateName = stateCodeToName(stateCode);
-    const currentUser = this.props.currentUser;
+    // const currentUser = this.props.currentUser;
 
     console.log(stateInfo);
-
-    // if (stateInfo && stateInfo.lastUpdatedDate) {
-    //   console.log(formatDate(stateInfo.lastUpdatedDate, ""));
-    // }
 
     return (
       <Layout className="layout">
         <BreadcrumbNav stateCode={stateCode} />
         <Row>
-          <Col span={8}>
+          {/* <Col span={8}>
             <PageHeader
               className="site-page-header"
               onBack={() => null}
@@ -94,21 +91,26 @@ class StateContainer extends React.Component {
               subTitle={stateInfo && stateInfo.lastUpdatedDate}
             />
             ,
-          </Col>
+          </Col> */}
         </Row>
         <Divider orientation="center">
           <h2>Infections</h2>
         </Divider>
         <Row gutter={[0, 16]}>
+          {/* RISK METER */}
           <Col span={12}>
             <RiskCard stateInfo={stateInfo} stateName={stateName} />
           </Col>
+          {/* INFECTION CARD */}
+          <Col span={12}>
+            <InfectionCard stateInfo={stateInfo} stateName={stateName} />
+          </Col>
         </Row>
-
         <Divider orientation="center">
           <h2>Vaccinations</h2>
         </Divider>
         <Row>
+          {/* VACCINATION CARD */}
           <Col span={24}>{this.renderVaccinationCardComponent()}</Col>
         </Row>
         {/* <CommentListContainer stateCode={stateCode} currentUser={currentUser} /> */}
