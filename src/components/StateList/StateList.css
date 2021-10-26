@@ -1,9 +1,8 @@
 .table-header {
-    font-size: 60px;
-
+  font-size: 60px;
 }
 
-.statelist-container {
+/* .statelist-container {
     width: 100vw; 
     height: 85vh;
     display: flex;
@@ -14,28 +13,28 @@
 .statelist-table {
     width: 55vw; 
     padding-bottom: 25vh;
-}
+} */
 
 /* MEDIA QUERIES */
 
 /* Small devices < 414 px in width */
 @media (max-width: 414px) {
-    .ant-divider-inner-text {
-        margin: 25px 0; 
-    }
-    .table-header {
-        font-size: 28px; 
-    }
-    .statelist-table {
-        height: 90vh; 
-    }
-    .state-code {
-        margin: 0 17px; 
-    }
+  .ant-divider-inner-text {
+    margin: 25px 0;
+  }
+  .table-header {
+    font-size: 28px;
+  }
+  .statelist-table {
+    height: 90vh;
+  }
+  .state-code {
+    margin: 0 17px;
+  }
 }
 
 @media (max-width: 1440px) {
-    .statelist-table {
-        padding-bottom: 0;
-    }
+  .statelist-table {
+    padding-bottom: 0;
+  }
 }
