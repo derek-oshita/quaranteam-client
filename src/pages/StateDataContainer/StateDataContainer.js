@@ -30,11 +30,31 @@ class StateDataContainer extends Component {
         });
       })
       .catch((err) => {
-        throw new Error("StateDtaaContaier: ", err);
+        throw new Error("StateDataContaier: ", err);
       });
   };
 
-  setDataforStatesMeta = () => {};
+  setDataforStatesMeta = () => {
+    const url = process.env.REACT_APP_URL_META;
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        this.setState({
+          statesMeta: data,
+        });
+      })
+      .catch((err) => {
+        throw new Error("StateDataContaier: ", err);
+      });
+  };
 
   async componentDidMount() {
     await this.setDataForStates();
@@ -42,7 +62,7 @@ class StateDataContainer extends Component {
   }
 
   render() {
-    const { states } = this?.state;
+    const { states, statesMeta } = this.state;
     console.log(states);
     return (
       <>
@@ -50,7 +70,7 @@ class StateDataContainer extends Component {
           <span className="table-header">US COVID-19 Data</span>
         </Divider>
         {states.length !== 0 ? (
-          <StateList states={states} />
+          <StateList states={states} statesMeta={statesMeta} />
         ) : (
           <Space className="space-med" size="middle">
             <Spin size="large" />

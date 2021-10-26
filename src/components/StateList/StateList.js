@@ -8,6 +8,8 @@ function StateList(props) {
   const stateList = props.states.map((stateObj) => {
     return <State key={stateObj.id} stateObj={stateObj}></State>;
   });
+
+  console.log(props);
   return (
     <>
       <div className="statelist-container">
