@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Col, Card, Badge } from "antd";
 
 import stateCodeToName from "../../utils/stateCodeToName";
+import riskLevelToCustomData from "../../utils/riskLevelToCustomData";
 import "./State.less";
 
 const { Meta } = Card;
@@ -11,8 +12,7 @@ const { Meta } = Card;
 function State(props) {
   const { state } = props.stateObj;
   const metaData = getMetaData(props);
-  console.log(props.stateObj);
-  console.log(metaData);
+  console.log("state", props.stateObj);
   return (
     <div>
       <Link to={`/states/${state}`}>
@@ -26,7 +26,17 @@ function State(props) {
               ></img>
             </div>
             <span>{state}</span>
-            <Meta title={<Badge color="blue"></Badge>}></Meta>
+            <Meta
+              title={
+                <Badge
+                  color={
+                    props.stateObj &&
+                    props.stateObj.riskLevels &&
+                    props.stateObj.riskLevels.overall
+                  }
+                ></Badge>
+              }
+            ></Meta>
           </Card>
         </div>
       </Link>
