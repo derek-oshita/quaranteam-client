@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Spin, Space } from "antd";
 
-import CustomDataSets from "../../../utils/CustomDataSets";
+import riskLevelToCustomData from "../../../utils/riskLevelToCustomData";
 import RiskMeter from "./RiskMeter";
 import "./RiskCard.less";
 
@@ -37,7 +37,7 @@ ICU
 */
 
 const renderRisk = (riskLevelInteger, param) => {
-  return CustomDataSets[riskLevelInteger][param];
+  return riskLevelToCustomData[riskLevelInteger][param];
 };
 
 const RiskCard = (props) => {

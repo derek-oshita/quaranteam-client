@@ -1,19 +1,17 @@
 // IMPORTS
 import React from "react";
 import { Link } from "react-router-dom";
-import "./State.css";
-// ANT DESIGN
-import { Row, Col, Divider } from "antd";
-const style = { padding: "8px 0" };
+import { Col } from "antd";
 
-// STATE
+import "./State.css";
+
 function State(props) {
   const { stateObj } = props;
   return (
     <div>
       <Link to={`/states/${stateObj.state}`}>
         <Col className="gutter-row" span={6}>
-          <div style={style}>
+          <div style={{ padding: "0.5em" }}>
             <span className="state-code">{stateObj.state}</span>
           </div>
         </Col>
@@ -22,5 +20,4 @@ function State(props) {
   );
 }
 
-// EXPORTS
 export default State;

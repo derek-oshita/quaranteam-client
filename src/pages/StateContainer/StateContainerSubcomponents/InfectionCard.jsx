@@ -8,7 +8,6 @@ class InfectionCard extends Component {
     hospitalBeds
         capacity
         current
-    
 */
   render() {
     // this.props?.stateinfo?.actuals

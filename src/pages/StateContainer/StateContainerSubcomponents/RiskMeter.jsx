@@ -2,31 +2,10 @@ import React, { Component } from "react";
 import { Card, Button, Divider } from "antd";
 import { WarningOutlined } from "@ant-design/icons";
 
+import riskLevelToCustomData from "../../../utils/riskLevelToCustomData";
 import "./RiskMeter.less";
 
-const riskMeterHeader = "Risk Meter",
-  customDataObj = [
-    {
-      riskLevel: "LOW",
-      riskColor: "#00FF7F",
-    },
-    {
-      riskLevel: "MEDIUM",
-      riskColor: "#FBEC5D",
-    },
-    {
-      riskLevel: "HIGH",
-      riskColor: "#FFBF00",
-    },
-    {
-      riskLevel: "SEVERE",
-      riskColor: "#FF3131",
-    },
-    {
-      riskLevel: "DON'T GO!",
-      riskColor: "#770737",
-    },
-  ];
+const riskMeterHeader = "Risk Meter";
 
 class RiskMeter extends Component {
   renderRiskLevelButtons = (arr, overallRisk) => {
@@ -68,7 +47,7 @@ class RiskMeter extends Component {
         </div>
         <Divider />
         {this.renderRiskLevelButtons(
-          customDataObj,
+          riskLevelToCustomData,
           this.props.stateInfo.riskLevels?.overall
         )}
       </Card>

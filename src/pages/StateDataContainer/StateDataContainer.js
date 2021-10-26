@@ -35,10 +35,11 @@ class StateDataContainer extends Component {
 
   render() {
     const { states } = this.state;
+    console.log(states);
     return (
       <>
         <Divider orientation="left">
-          <span className="table-header">COVID-19 Data Table of the US</span>
+          <span className="table-header">US COVID-19 Data</span>
         </Divider>
         {states.length !== 0 ? (
           <StateList states={states} />
