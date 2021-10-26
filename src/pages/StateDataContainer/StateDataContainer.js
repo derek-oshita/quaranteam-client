@@ -9,9 +9,12 @@ const url = process.env.REACT_APP_URL;
 class StateDataContainer extends Component {
   state = {
     states: [],
+    statesMeta: [],
   };
-  async componentDidMount() {
-    await fetch(url, {
+
+  setDataForStates = () => {
+    const url = process.env.REACT_APP_URL;
+    fetch(url, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -22,19 +25,24 @@ class StateDataContainer extends Component {
         return res.json();
       })
       .then((data) => {
-        this.setState(() => {
-          return {
-            states: data,
-          };
+        this.setState({
+          states: data,
         });
       })
       .catch((err) => {
-        throw new Error("StateDataContainer: ", err);
+        throw new Error("StateDtaaContaier: ", err);
       });
+  };
+
+  setDataforStatesMeta = () => {};
+
+  async componentDidMount() {
+    await this.setDataForStates();
+    await this.setDataforStatesMeta();
   }
 
   render() {
-    const { states } = this.state;
+    const { states } = this?.state;
     console.log(states);
     return (
       <>
