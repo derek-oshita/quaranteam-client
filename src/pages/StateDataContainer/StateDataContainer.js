@@ -63,7 +63,6 @@ class StateDataContainer extends Component {
 
   render() {
     const { states, statesMeta } = this.state;
-    console.log(states);
     return (
       <>
         <Divider orientation="left">
