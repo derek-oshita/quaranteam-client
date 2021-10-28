@@ -56,6 +56,40 @@ function State(props) {
               <span className="state-card-code">{state}</span>
             </Button>
             <p className="state-card-nickname">{nickname}</p> */}
+            <Meta
+              title={
+                <Button
+                  shape="circle"
+                  style={{
+                    backgroundColor: riskColor,
+                    border: "solid black 0.1em",
+                    width: "5em",
+                    height: "5em",
+                  }}
+                >
+                  <span className="state-card-code">{state}</span>
+                </Button>
+              }
+              description={nickname}
+            />
+            {/* <Card type="inner" title={nickname} extra={<a href="#">More</a>}>
+              <Meta
+                title={
+                  <Button
+                    shape="circle"
+                    style={{
+                      backgroundColor: riskColor,
+                      border: "solid black 0.1em",
+                      width: "5em",
+                      height: "5em",
+                    }}
+                  >
+                    <span className="state-card-code">{state}</span>
+                  </Button>
+                }
+                description={nickname}
+              />
+            </Card> */}
           </Card>
         </div>
         {/* TAB COMPONENT WHERE YOU CAN TOGGLE BETWEEN VACCINATED AND UNVACCINATED */}
