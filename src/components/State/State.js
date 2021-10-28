@@ -12,17 +12,16 @@ const { Meta } = Card;
 function State(props) {
   const { stateObj } = props;
   const { state } = props.stateObj;
-  const overall = getNestedData(stateObj, "riskLevels", "overall");
-  const riskColor = riskLevelToCustomData[overall - 1].riskColor;
+  const overallRiskLevel = getNestedData(stateObj, "riskLevels", "overall");
+  const nickname = getNestedData(stateObj, "meta", "nickname");
+  const riskColor = riskLevelToCustomData[overallRiskLevel - 1].riskColor;
+
+  console.log(stateObj);
   return (
     <div>
       <Link to={`/states/${state}`}>
         <div className="state-card-container">
-          <Card
-            className="state-card"
-            hoverable
-            style={{ backgroundColor: riskColor }}
-          >
+          <Card className="state-card" hoverable>
             <div>
               <img
                 className="state-card-img"
@@ -30,8 +29,8 @@ function State(props) {
                 src={getNestedData(stateObj, "meta", "state_flag_url")}
               ></img>
             </div>
-            <span>{state}</span>
-            <Meta title={<Badge></Badge>}></Meta>
+            {/* <Meta title={state} description={nickname}></Meta> */}
+            <p className="state-card-code">{state}</p>
           </Card>
         </div>
       </Link>

@@ -28,9 +28,6 @@
   .statelist-table {
     height: 90vh;
   }
-  .state-code {
-    margin: 0 17px;
-  }
 }
 
 @media (max-width: 1440px) {

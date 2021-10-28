@@ -1,29 +1,28 @@
 .hero-main {
-    /* background-color: #f8f8ff; */
-    height: 100vh; 
+  /* background-color: #f8f8ff; */
+  height: 100vh;
 }
 
 .hero {
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-    height: 70vh; 
-    width: 65vw; 
-
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  height: 70vh;
+  width: 65vw;
 }
 
 .divider {
-    height: 50vh; 
+  height: 50vh;
 }
 
 /* MEDIA QUERIES  */
 /* // Small devices (landscape phones, 576px and up) */
 @media (max-width: 414px) {
-    * {
-        margin: 0; 
-    }
-    .hero {
-        width: 100vw; 
-    }
+  * {
+    margin: 0;
+  }
+  .hero {
+    width: 100vw;
+  }
 }
 
 /* // Medium devices (tablets, 768px and up) */

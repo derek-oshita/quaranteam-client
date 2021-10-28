@@ -4,8 +4,6 @@ import { Spin, Space, Divider } from "antd";
 import StateList from "../../components/StateList/StateList";
 import "./StateDataContainer.less";
 
-const url = process.env.REACT_APP_URL;
-
 class StateDataContainer extends Component {
   state = {
     states: [],
