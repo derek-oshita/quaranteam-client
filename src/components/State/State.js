@@ -22,15 +22,13 @@ function State(props) {
       <Link to={`/states/${state}`}>
         <div className="state-card-container">
           <Card className="state-card" hoverable>
-            <div>
-              <img
-                className="state-card-img"
-                alt={`The flag of ${stateCodeToName(state)}`}
-                src={getNestedData(stateObj, "meta", "state_flag_url")}
-              ></img>
-            </div>
-            {/* <Meta title={state} description={nickname}></Meta> */}
+            <img
+              className="state-card-img"
+              alt={`The flag of ${stateCodeToName(state)}`}
+              src={getNestedData(stateObj, "meta", "state_flag_url")}
+            ></img>
             <p className="state-card-code">{state}</p>
+            <p className="state-card-nickname">{nickname}</p>
           </Card>
         </div>
       </Link>
