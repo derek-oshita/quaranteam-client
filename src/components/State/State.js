@@ -13,9 +13,7 @@ function State(props) {
   const { stateObj } = props;
   const { state } = props.stateObj;
   const overall = getNestedData(stateObj, "riskLevels", "overall");
-  // console.log("state", state);
-  // console.log("stateObj", stateObj);
-  console.log("colorString", riskLevelToCustomData, overall);
+  const riskColor = riskLevelToCustomData[overall - 1].riskColor;
   return (
     <div>
       <Link to={`/states/${state}`}>
@@ -23,11 +21,7 @@ function State(props) {
           <Card
             className="state-card"
             hoverable
-            style={{
-              border: `2px solid ${
-                riskLevelToCustomData[overall - 1].riskColor
-              }`,
-            }}
+            style={{ backgroundColor: riskColor }}
           >
             <div>
               <img
