@@ -1,7 +1,7 @@
 // IMPORTS
 import React from "react";
 import { Link } from "react-router-dom";
-import { Col, Card, Badge } from "antd";
+import { Col, Card, Badge, Button, Row } from "antd";
 
 import stateCodeToName from "../../utils/stateCodeToName";
 import riskLevelToCustomData from "../../utils/riskLevelToCustomData";
@@ -21,16 +21,44 @@ function State(props) {
     <div>
       <Link to={`/states/${state}`}>
         <div className="state-card-container">
-          <Card className="state-card" hoverable>
-            <img
+          <Card
+            className="state-card"
+            hoverable
+            cover={
+              <img
+                className="state-card-img"
+                alt={`The flag of ${stateCodeToName(state)}`}
+                src={getNestedData(stateObj, "meta", "state_flag_url")}
+              ></img>
+            }
+          >
+            {/* <img
               className="state-card-img"
               alt={`The flag of ${stateCodeToName(state)}`}
               src={getNestedData(stateObj, "meta", "state_flag_url")}
             ></img>
-            <p className="state-card-code">{state}</p>
-            <p className="state-card-nickname">{nickname}</p>
+            <div className="state-card-title-container">
+              <span>
+                {" "}
+                <Button
+                  shape="circle"
+                  style={{ backgroundColor: riskColor }}
+                  size={"small"}
+                >
+                  {" "}
+                </Button>
+              </span>
+
+              <span className="state-card-code">{state}</span>
+            </div> */}
+
+            {/* <Button style={{ backgroundColor: riskColor, width: "5em" }}>
+              <span className="state-card-code">{state}</span>
+            </Button>
+            <p className="state-card-nickname">{nickname}</p> */}
           </Card>
         </div>
+        {/* TAB COMPONENT WHERE YOU CAN TOGGLE BETWEEN VACCINATED AND UNVACCINATED */}
       </Link>
     </div>
   );
