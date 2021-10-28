@@ -10,33 +10,34 @@ import "./State.less";
 const { Meta } = Card;
 
 function State(props) {
+  const { stateObj } = props;
   const { state } = props.stateObj;
-  const metaData = getMetaData(props);
-  console.log("state", props.stateObj);
+  const overall = getNestedData(stateObj, "riskLevels", "overall");
+  // console.log("state", state);
+  // console.log("stateObj", stateObj);
+  console.log("colorString", riskLevelToCustomData, overall);
   return (
     <div>
       <Link to={`/states/${state}`}>
         <div className="state-card-container">
-          <Card className="state-card" hoverable>
+          <Card
+            className="state-card"
+            hoverable
+            style={{
+              border: `2px solid ${
+                riskLevelToCustomData[overall - 1].riskColor
+              }`,
+            }}
+          >
             <div>
               <img
                 className="state-card-img"
                 alt={`The flag of ${stateCodeToName(state)}`}
-                src={getMetaProperty(metaData, "state_flag_url")}
+                src={getNestedData(stateObj, "meta", "state_flag_url")}
               ></img>
             </div>
             <span>{state}</span>
-            <Meta
-              title={
-                <Badge
-                  color={
-                    props.stateObj &&
-                    props.stateObj.riskLevels &&
-                    props.stateObj.riskLevels.overall
-                  }
-                ></Badge>
-              }
-            ></Meta>
+            <Meta title={<Badge></Badge>}></Meta>
           </Card>
         </div>
       </Link>
@@ -44,17 +45,9 @@ function State(props) {
   );
 }
 
-const getMetaData = (props) => {
-  if (props.stateObj && props.stateObj.meta) {
-    let meta = props.stateObj.meta;
-    return meta;
-  }
-  return null;
-};
-
-const getMetaProperty = (metaDataObject, propertyName) => {
-  if (metaDataObject) {
-    return metaDataObject[propertyName];
+const getNestedData = (stateObj, key, property) => {
+  if (stateObj && stateObj[key] && stateObj[key][property]) {
+    return stateObj[key][property];
   }
   return null;
 };
