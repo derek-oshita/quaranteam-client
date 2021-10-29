@@ -13,12 +13,3 @@ describe("stateCodeToName test", () => {
     expect(stateCodeToName(NV)).not.toMatch(CA);
   });
 });
-
-describe("stateCodeToName test", () => {
-  it("should throw an error if no state code is passed", () => {
-    expect(() => stateCodeToName()).toThrow(Error);
-    expect(() => stateCodeToName(undefined)).toThrow(
-      "No state code was passed!"
-    );
-  });
-});

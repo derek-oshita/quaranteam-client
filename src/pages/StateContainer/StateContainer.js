@@ -77,7 +77,7 @@ class StateContainer extends React.Component {
     const stateName = stateCodeToName(stateCode);
     // const currentUser = this.props.currentUser;
 
-    console.log(stateInfo);
+    console.log("stateCode", stateCode);
 
     return (
       <Layout className="layout">

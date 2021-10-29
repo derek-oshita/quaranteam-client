@@ -236,8 +236,6 @@ const stateCodeToName = (newName) => {
     newName = "Wyoming";
     return newName;
   }
-
-  throw new Error("No state code was passed!");
 };
 
 export default stateCodeToName;
