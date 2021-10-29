@@ -1,10 +1,9 @@
-// IMPORTS
-import React from "react";
+/* 
+This helper function takes a two letter string, like "CA", 
+and returns a string representing the full name of that state.
+*/
 
-// STATENAME CONVERTER
-function stateCodeToName(newName) {
-  // let newName = props.abbrev;
-
+const stateCodeToName = (newName) => {
   if (newName === "AK") {
     newName = "Alaska";
     return newName;
@@ -237,8 +236,8 @@ function stateCodeToName(newName) {
     newName = "Wyoming";
     return newName;
   }
-  return <div>{newName}</div>;
-}
 
-// EXPORTS
+  throw new Error("No state code was passed!");
+};
+
 export default stateCodeToName;
