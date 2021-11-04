@@ -1,5 +1,5 @@
 import React from "react";
-import { Row } from "antd";
+import { Row, Col } from "antd";
 
 import State from "../State/State";
 import "./StateList.css";
@@ -25,13 +25,9 @@ const StateList = (props) => {
       return <State key={stateObj.id} stateObj={stateObj}></State>;
     });
   return (
-    <>
-      <div className="statelist-container">
-        <div className="statelist-table">
-          <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>{stateList}</Row>
-        </div>
-      </div>
-    </>
+    <div className="statelist-container">
+      <Row>{stateList}</Row>
+    </div>
   );
 };
 
