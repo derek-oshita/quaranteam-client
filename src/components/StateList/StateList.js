@@ -25,8 +25,11 @@ const StateList = (props) => {
       return <State key={stateObj.id} stateObj={stateObj}></State>;
     });
   return (
-    <div className="statelist-container">
-      <Row>{stateList}</Row>
+    // <div className="statelist-container">
+    //   <Row>{stateList}</Row>
+    // </div>
+    <div className="site-card-wrapper">
+      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>{stateList}</Row>
     </div>
   );
 };

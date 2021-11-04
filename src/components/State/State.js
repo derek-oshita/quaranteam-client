@@ -18,7 +18,7 @@ function State(props) {
 
   console.log(stateObj);
   return (
-    <div>
+    <Col>
       <Link to={`/states/${state}`}>
         <div className="state-card-container">
           <Card
@@ -32,30 +32,6 @@ function State(props) {
               ></img>
             }
           >
-            {/* <img
-              className="state-card-img"
-              alt={`The flag of ${stateCodeToName(state)}`}
-              src={getNestedData(stateObj, "meta", "state_flag_url")}
-            ></img>
-            <div className="state-card-title-container">
-              <span>
-                {" "}
-                <Button
-                  shape="circle"
-                  style={{ backgroundColor: riskColor }}
-                  size={"small"}
-                >
-                  {" "}
-                </Button>
-              </span>
-
-              <span className="state-card-code">{state}</span>
-            </div> */}
-
-            {/* <Button style={{ backgroundColor: riskColor, width: "5em" }}>
-              <span className="state-card-code">{state}</span>
-            </Button>
-            <p className="state-card-nickname">{nickname}</p> */}
             <Meta
               title={
                 <Button
@@ -72,29 +48,10 @@ function State(props) {
               }
               description={nickname}
             />
-            {/* <Card type="inner" title={nickname} extra={<a href="#">More</a>}>
-              <Meta
-                title={
-                  <Button
-                    shape="circle"
-                    style={{
-                      backgroundColor: riskColor,
-                      border: "solid black 0.1em",
-                      width: "5em",
-                      height: "5em",
-                    }}
-                  >
-                    <span className="state-card-code">{state}</span>
-                  </Button>
-                }
-                description={nickname}
-              />
-            </Card> */}
           </Card>
         </div>
-        {/* TAB COMPONENT WHERE YOU CAN TOGGLE BETWEEN VACCINATED AND UNVACCINATED */}
       </Link>
-    </div>
+    </Col>
   );
 }
 
