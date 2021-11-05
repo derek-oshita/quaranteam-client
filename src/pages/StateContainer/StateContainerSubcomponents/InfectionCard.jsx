@@ -1,24 +1,23 @@
-import React, { Component } from "react";
-import { Card, Button, Divider } from "antd";
+import React from "react";
+import { Card, Button, Divider, Breadcrumb, PageHeader } from "antd";
+import { UserOutlined, HomeOutlined } from "@ant-design/icons";
 
 const InfectionCard = (props) => {
-  const { stateInfo: { actuals } = { actuals: 0 } } = props;
-  // const {
-  //   stateInfo: { riskLevels: { overall } = { overall: 0 } },
-  // } = this.props;
-  // const {
-  //   stateInfo: {
-  //     actuals: { icuBeds: { capacity } = { capacity: 0 } },
-  //   },
-  // } = props;
-  // console.log("actuals", actuals);
+  const {
+    stateInfo: { actuals: { icuBeds } = { icuBeds: 0 } },
+  } = props;
   return (
     <Card>
-      {actuals && actuals.icuBeds && actuals.icuBeds.capacity}
-      <Divider></Divider>
-      {actuals && actuals.icuBeds && actuals.icuBeds.currentUsageTotal}
-      <Divider></Divider>
-      {actuals && actuals.icuBeds && actuals.icuBeds.currentUsageCovid}
+      <PageHeader
+        className="site-page-header"
+        onBack={() => null}
+        title="Title"
+        subTitle="This is a subtitle"
+      />
+      ,<Divider></Divider>
+      {icuBeds && icuBeds.currentUsageCovid} Covid ICU
+      {icuBeds && icuBeds.currentUsageTotal} Total ICU Usage{" "}
+      {icuBeds && icuBeds.capacity} Total ICU CapacitY
     </Card>
   );
 };
