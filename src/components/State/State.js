@@ -1,11 +1,10 @@
 // IMPORTS
 import React from "react";
 import { Link } from "react-router-dom";
-import { Col, Card, Button, Row, Tooltip } from "antd";
+import { Col, Card, Button, Tooltip } from "antd";
 
 import stateCodeToName from "../../utils/stateCodeToName";
 import RiskLevelData from "../../utils/RiskLevelData";
-// import riskLevelToCustomData from "../../utils/riskLevelToCustomData";
 import "./State.less";
 
 const { Meta } = Card;
@@ -46,7 +45,12 @@ function State(props) {
                     <span className="state-card-code">{state}</span>
                   </Button>
                 }
-                description={nickname}
+                description={
+                  <>
+                    <h3>{stateCodeToName(state)}</h3>
+                    <p>{nickname}</p>
+                  </>
+                }
               />
             </Card>
           </div>
