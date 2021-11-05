@@ -106,7 +106,8 @@ const renderHeaderWithIcon = (icon, headerString) => {
   return (
     <div className="vaccination-header-div">
       <span className="vaccination-header">
-        {icon} {headerString}{" "}
+        {icon}
+        {headerString}{" "}
       </span>
     </div>
   );

@@ -49,7 +49,13 @@ class RiskMeter extends Component {
         <div className="risk-meter-state-header-div">
           <span className="risk-meter-header">
             {" "}
-            <WarningOutlined id="risk-warning-icon" /> {riskMeterHeader}
+            <WarningOutlined
+              id="risk-warning-icon"
+              style={{
+                color: "rgb(255, 201, 0)",
+              }}
+            />{" "}
+            {riskMeterHeader}
           </span>
         </div>
         <Divider />
