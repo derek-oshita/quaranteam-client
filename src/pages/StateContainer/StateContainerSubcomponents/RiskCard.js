@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Spin, Space } from "antd";
 
-import riskLevelToCustomData from "../../../utils/riskLevelToCustomData";
+// import riskLevelToCustomData from "../../../utils/riskLevelToCustomData";
 import RiskMeter from "./RiskMeter";
 import "./RiskCard.less";
 
@@ -36,9 +36,9 @@ ICU
 
 */
 
-const renderRisk = (riskLevelInteger, param) => {
-  return riskLevelToCustomData[riskLevelInteger][param];
-};
+// const renderRisk = (riskLevelInteger, param) => {
+//   return riskLevelToCustomData[riskLevelInteger][param];
+// };
 
 const RiskCard = (props) => {
   const { stateInfo } = props;
