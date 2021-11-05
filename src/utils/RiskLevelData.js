@@ -1,25 +1,8 @@
-// const riskLevelToCustomData = [
-//   {
-//     riskLevel: "LOW",
-//     riskColor: "rgb(0, 212, 116)",
-//   },
-//   {
-//     riskLevel: "MEDIUM",
-//     riskColor: "rgb(255, 201, 0)",
-//   },
-//   {
-//     riskLevel: "HIGH",
-//     riskColor: "rgb(255, 150, 0)",
-//   },
-//   {
-//     riskLevel: "SEVERE",
-//     riskColor: "rgb(217, 0, 44)",
-//   },
-//   {
-//     riskLevel: "DON'T GO!",
-//     riskColor: "rgb(121, 0, 25)",
-//   },
-// ];
+/* 
+The responsibility of this class is to accept a risk level (number)
+and handle all of the custom data associated with that risk level number for 
+reusable styling purposes.
+*/
 
 class RiskLevelData {
   constructor(level) {
@@ -64,10 +47,9 @@ class RiskLevelData {
     };
 
     this.getRiskLevel = () => {
-      return this[this.getRiskObj()].riskLevel;
+      return this.getRiskObj().riskLevel;
     };
   }
 }
 
 export default RiskLevelData;
-// export default riskLevelToCustomData

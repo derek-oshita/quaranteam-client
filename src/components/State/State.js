@@ -1,7 +1,7 @@
 // IMPORTS
 import React from "react";
 import { Link } from "react-router-dom";
-import { Col, Card, Badge, Button, Row } from "antd";
+import { Col, Card, Button, Row, Tooltip } from "antd";
 
 import stateCodeToName from "../../utils/stateCodeToName";
 import RiskLevelData from "../../utils/RiskLevelData";
@@ -19,36 +19,38 @@ function State(props) {
   return (
     <Col>
       <Link to={`/states/${state}`}>
-        <div className="state-card-container">
-          <Card
-            className="state-card"
-            hoverable
-            cover={
-              <img
-                className="state-card-img"
-                alt={`The flag of ${stateCodeToName(state)}`}
-                src={getNestedData(stateObj, "meta", "state_flag_url")}
-              ></img>
-            }
-          >
-            <Meta
-              title={
-                <Button
-                  shape="circle"
-                  style={{
-                    backgroundColor: `${RiskLevelModel.getRiskColor()}`,
-                    border: "solid black 0.1em",
-                    width: "5em",
-                    height: "5em",
-                  }}
-                >
-                  <span className="state-card-code">{state}</span>
-                </Button>
+        <Tooltip title={`RISK LEVEL: ${RiskLevelModel.getRiskLevel()}`}>
+          <div className="state-card-container">
+            <Card
+              className="state-card"
+              hoverable
+              cover={
+                <img
+                  className="state-card-img"
+                  alt={`The flag of ${stateCodeToName(state)}`}
+                  src={getNestedData(stateObj, "meta", "state_flag_url")}
+                ></img>
               }
-              description={nickname}
-            />
-          </Card>
-        </div>
+            >
+              <Meta
+                title={
+                  <Button
+                    shape="circle"
+                    style={{
+                      backgroundColor: `${RiskLevelModel.getRiskColor()}`,
+                      border: "solid black 0.1em",
+                      width: "5em",
+                      height: "5em",
+                    }}
+                  >
+                    <span className="state-card-code">{state}</span>
+                  </Button>
+                }
+                description={nickname}
+              />
+            </Card>
+          </div>
+        </Tooltip>
       </Link>
     </Col>
   );
