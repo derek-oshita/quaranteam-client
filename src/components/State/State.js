@@ -18,7 +18,7 @@ function State(props) {
 
   console.log(stateObj);
   return (
-    <Col>
+    <Col >
       <Link to={`/states/${state}`}>
         <div className="state-card-container">
           <Card
