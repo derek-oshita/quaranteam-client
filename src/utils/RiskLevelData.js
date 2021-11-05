@@ -51,7 +51,7 @@ class RiskLevelData {
       return this.level;
     };
 
-    this.getCustomData = () => {
+    this.getCustomDataArr = () => {
       return this.customData;
     };
 
@@ -60,11 +60,11 @@ class RiskLevelData {
     };
 
     this.getRiskColor = () => {
-      return this.getDataObj().riskColor;
+      return this.getRiskObj().riskColor;
     };
 
     this.getRiskLevel = () => {
-      return this[this.getDataObj()].riskLevel;
+      return this[this.getRiskObj()].riskLevel;
     };
   }
 }

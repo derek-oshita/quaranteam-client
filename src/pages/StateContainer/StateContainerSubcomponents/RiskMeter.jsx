@@ -53,7 +53,10 @@ class RiskMeter extends Component {
           </span>
         </div>
         <Divider />
-        {this.renderRiskLevelButtons(RiskLevelModel.getCustomData(), overall)}
+        {this.renderRiskLevelButtons(
+          RiskLevelModel.getCustomDataArr(),
+          overall
+        )}
       </Card>
     );
   }

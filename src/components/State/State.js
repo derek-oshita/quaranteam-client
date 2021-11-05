@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Col, Card, Badge, Button, Row } from "antd";
 
 import stateCodeToName from "../../utils/stateCodeToName";
+import RiskLevelData from "../../utils/RiskLevelData";
 // import riskLevelToCustomData from "../../utils/riskLevelToCustomData";
 import "./State.less";
 
@@ -14,9 +15,7 @@ function State(props) {
   const { state } = props.stateObj;
   const overallRiskLevel = getNestedData(stateObj, "riskLevels", "overall");
   const nickname = getNestedData(stateObj, "meta", "nickname");
-  // const riskColor = riskLevelToCustomData[overallRiskLevel - 1].riskColor;
-
-  console.log(stateObj);
+  const RiskLevelModel = new RiskLevelData(overallRiskLevel);
   return (
     <Col>
       <Link to={`/states/${state}`}>
@@ -37,7 +36,7 @@ function State(props) {
                 <Button
                   shape="circle"
                   style={{
-                    // backgroundColor: riskColor,
+                    backgroundColor: `${RiskLevelModel.getRiskColor()}`,
                     border: "solid black 0.1em",
                     width: "5em",
                     height: "5em",
