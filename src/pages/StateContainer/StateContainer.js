@@ -80,28 +80,20 @@ class StateContainer extends React.Component {
     return (
       <Layout className="layout">
         <BreadcrumbNav stateCode={stateCode} />
-        <Row>
-          {/* <Col span={8}>
-            <PageHeader
-              className="site-page-header"
-              onBack={() => null}
-              title={stateName}
-              subTitle={stateInfo && stateInfo.lastUpdatedDate}
-            />
-            ,
-          </Col> */}
-        </Row>
+        <Row></Row>
         <Divider orientation="center">
           <h2>Infections</h2>
         </Divider>
-        <Row gutter={[0, 16]}>
-          {/* RISK METER */}
-          <Col span={12}>
-            <RiskCard stateInfo={stateInfo} stateName={stateName} />
-          </Col>
+        <Row
+        // gutter={[0, 16]}
+        >
           {/* INFECTION CARD */}
           <Col span={12}>
             <InfectionCard stateInfo={stateInfo} stateName={stateName} />
+          </Col>
+          {/* RISK METER */}
+          <Col span={12}>
+            <RiskCard stateInfo={stateInfo} stateName={stateName} />
           </Col>
         </Row>
         <Divider orientation="center">

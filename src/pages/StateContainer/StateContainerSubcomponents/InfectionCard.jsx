@@ -3,34 +3,22 @@ import { Card, Button, Divider, Breadcrumb, PageHeader } from "antd";
 import { UserOutlined, HomeOutlined } from "@ant-design/icons";
 
 import IcuTabsCard from "./InfectionCardSubComponents/IcuTabsCard";
+import stateCodeToName from "../../../utils/stateCodeToName";
 
 const InfectionCard = (props) => {
   const {
     stateInfo: { actuals: { icuBeds } = { icuBeds: 0 } },
   } = props;
+  console.log(props.stateInfo);
   return (
     <Card>
       <PageHeader
         className="site-page-header"
-        onBack={() => null}
-        title="Title"
-        subTitle="This is a subtitle"
+        onBack={() => (window.location.href = "/states")}
+        title={stateCodeToName(props?.stateInfo?.state)}
+        subTitle={`Last Updated: ${props?.stateInfo?.lastUpdatedDate}`}
       />
       ,<Divider></Divider>
-      {/* <div className="icu-container">
-          <span className="data-point">
-            {" "}
-            {icuBeds && icuBeds.currentUsageCovid} Covid ICU /
-          </span>
-        <span className="data-point">
-          {" "}
-          {icuBeds && icuBeds.currentUsageTotal} Total ICU Usage /
-        </span>
-        <span className="data-point">
-          {" "}
-          {icuBeds && icuBeds.capacity} Total ICU CapacitY
-        </span>
-      </div> */}
       <IcuTabsCard icuBeds={icuBeds} />
     </Card>
   );

@@ -114,7 +114,7 @@ const renderHeaderWithIcon = (icon, headerString) => {
 };
 
 const changeDecimalToPercentage = (num) => {
-  return num * 100;
+  return (num * 100).toFixed(1);
 };
 
 const addCommasToNumber = (num) => {

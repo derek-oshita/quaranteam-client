@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Card } from "antd";
 
+import "./IcuTabsCard.less";
+
 const tabList = [
   {
     key: "Covid ICU Usage",
@@ -11,13 +13,12 @@ const tabList = [
     tab: "Total ICU Usage",
   },
   {
-    key: "Total ICU Capacity",
-    tab: "Total ICU Capacity",
+    key: "Total ICU Remaining",
+    tab: "Total ICU Remaining",
   },
 ];
 
 const IcuTabsCard = (props) => {
-  // const [activeTabKey2, setActiveTabKey2] = useState('app');
   const [activeTabKey, setActiveTabKey] = useState("Covid ICU Usage");
 
   const onTabChange = (key) => {
@@ -29,9 +30,45 @@ const IcuTabsCard = (props) => {
     { icuBeds: { capacity } = { capacity: 0 } } = props;
 
   const contentList = {
-    "Covid ICU Usage": <p>{currentUsageCovid}</p>,
-    "Total ICU Usage": <p>{currentUsageTotal}</p>,
-    "Total ICU Capacity": <p>{capacity}</p>,
+    "Covid ICU Usage": (
+      <div className="icu-container">
+        <span className="percentage">
+          {calculatePercentageOfTotalCapacity(currentUsageCovid, capacity)}
+          {"%"}
+        </span>
+        <span className="percentage-total">
+          {" "}
+          {currentUsageCovid} / {capacity} total beds
+        </span>
+      </div>
+    ),
+    "Total ICU Usage": (
+      <div className="icu-container">
+        <span className="percentage">
+          {calculatePercentageOfTotalCapacity(currentUsageTotal, capacity)}
+          {"%"}
+        </span>
+        <span className="percentage-total">
+          {" "}
+          {currentUsageTotal} / {capacity} total beds
+        </span>
+      </div>
+    ),
+    "Total ICU Remaining": (
+      <div className="icu-container">
+        <span className="percentage">
+          {calculatePercentageOfTotalCapacity(
+            capacity - currentUsageTotal,
+            capacity
+          )}
+          {"%"}
+        </span>
+        <span className="percentage-total">
+          {" "}
+          {capacity - currentUsageTotal} / {capacity} total beds
+        </span>
+      </div>
+    ),
   };
 
   return (
@@ -40,7 +77,6 @@ const IcuTabsCard = (props) => {
         style={{ width: "100%" }}
         tabList={tabList}
         activeTabKey={activeTabKey}
-        // tabBarExtraContent={<a href="#">More</a>}
         onTabChange={(key) => {
           onTabChange(key);
         }}
@@ -51,6 +87,8 @@ const IcuTabsCard = (props) => {
   );
 };
 
-const calculatePercentageOfTotalCapacity = (numberOfBeds) => {};
+const calculatePercentageOfTotalCapacity = (numberOfBeds, totalBeds) => {
+  return ((numberOfBeds / totalBeds) * 100).toFixed(2);
+};
 
 export default IcuTabsCard;
