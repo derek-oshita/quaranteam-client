@@ -8,9 +8,14 @@ import stateCodeToName from "../../../utils/stateCodeToName";
 
 const InfectionCard = (props) => {
   const {
-    stateInfo: { actuals: { icuBeds } = { icuBeds: 0 } },
-  } = props;
-  console.log(props.stateInfo);
+      stateInfo: { actuals: { icuBeds } = { icuBeds: 0 } },
+    } = props,
+    {
+      stateInfo: { actuals: { deaths } = { deaths: 0 } },
+    } = props,
+    {
+      stateInfo: { actuals: { newDeaths } = { newDeaths: 0 } },
+    } = props;
   return (
     <Card>
       <PageHeader
@@ -21,7 +26,7 @@ const InfectionCard = (props) => {
       />
       ,<Divider></Divider>
       <IcuTabsCard icuBeds={icuBeds} />
-      <DeathTabsCard />
+      <DeathTabsCard deaths={deaths} newDeaths={newDeaths} />
     </Card>
   );
 };
