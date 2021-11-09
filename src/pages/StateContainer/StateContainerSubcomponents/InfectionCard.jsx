@@ -15,7 +15,10 @@ const InfectionCard = (props) => {
     } = props,
     {
       stateInfo: { actuals: { newDeaths } = { newDeaths: 0 } },
-    } = props;
+    } = props,
+    { stateInfo: { population } = { population: 0 } } = props;
+
+  console.log("props", population);
   return (
     <Card>
       <PageHeader
@@ -26,7 +29,11 @@ const InfectionCard = (props) => {
       />
       ,<Divider></Divider>
       <IcuTabsCard icuBeds={icuBeds} />
-      <DeathTabsCard deaths={deaths} newDeaths={newDeaths} />
+      <DeathTabsCard
+        deaths={deaths}
+        newDeaths={newDeaths}
+        population={population}
+      />
     </Card>
   );
 };
