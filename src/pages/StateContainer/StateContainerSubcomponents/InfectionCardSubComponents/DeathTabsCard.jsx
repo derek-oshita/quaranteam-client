@@ -9,14 +9,6 @@ const DeathTabsCard = (props) => {
 
   const { deaths, newDeaths, population } = props;
 
-  const onTabChange = (key) => {
-    setActiveTabKey(key);
-  };
-
-  const calculatePercentageOfTotalDeaths = (numberOfDeaths, totalDeaths) => {
-    return ((numberOfDeaths / totalDeaths) * 100).toFixed(2);
-  };
-
   const tabList = [
     {
       key: "New Deaths",
@@ -27,6 +19,14 @@ const DeathTabsCard = (props) => {
       tab: "Total Deaths",
     },
   ];
+
+  const onTabChange = (key) => {
+    setActiveTabKey(key);
+  };
+
+  const calculatePercentageOfTotalDeaths = (numberOfDeaths, totalDeaths) => {
+    return ((numberOfDeaths / totalDeaths) * 100).toFixed(2);
+  };
 
   const contentList = {
     "New Deaths": (
