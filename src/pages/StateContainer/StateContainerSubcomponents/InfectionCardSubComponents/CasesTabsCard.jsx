@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-
 import { Card } from "antd";
 
+import addCommasToNumber from "../../../../utils/addCommasToNumber";
+import "./CasesTabsCard.less";
+
 const CasesTabsCard = (props) => {
-  /* 
-    cases: 5006025
-    newCases: 9039
-    testPositivityRatio: 0.025
-    */
   const [activeTabKey, setActiveTabKey] = useState("New Cases");
 
   const { cases, newCases, testPositivityRatio } = props;
@@ -21,13 +18,32 @@ const CasesTabsCard = (props) => {
     setActiveTabKey(key);
   };
 
+  const calculatePercentageOfTotalCases = (numberOfCases, totalCases) => {
+    return ((numberOfCases / totalCases) * 100).toFixed(2);
+  };
+
   const contentList = {
     "New Cases": (
-      <>
-        {newCases} / {cases} total cases
-      </>
+      <div className="cases-container">
+        <span className="percentage">
+          {calculatePercentageOfTotalCases(newCases, cases)}
+          {"%"}
+        </span>
+        <span className="quantity-total">
+          {" "}
+          {newCases} / {addCommasToNumber(cases)} total cases
+        </span>
+      </div>
     ),
-    "Test Positivity Ratio": <>{testPositivityRatio}</>,
+    "Test Positivity Ratio": (
+      <div className="cases-container">
+        <span className="percentage">
+          {testPositivityRatio * 100}
+          {"%"}
+        </span>
+        <span className="quantity-total">Test Positivity Ratio</span>
+      </div>
+    ),
   };
 
   return (
