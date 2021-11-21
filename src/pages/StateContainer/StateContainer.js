@@ -84,15 +84,13 @@ class StateContainer extends React.Component {
         <Divider orientation="center">
           <h2>Infections</h2>
         </Divider>
-        <Row
-        // gutter={[0, 16]}
-        >
+        <Row>
           {/* INFECTION CARD */}
           <Col span={12}>
             <InfectionCard stateInfo={stateInfo} stateName={stateName} />
           </Col>
           {/* RISK METER */}
-          <Col span={12}>
+          <Col span={12} className="risk-meter-container">
             <RiskCard stateInfo={stateInfo} stateName={stateName} />
           </Col>
         </Row>

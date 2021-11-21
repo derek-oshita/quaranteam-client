@@ -36,6 +36,17 @@ const InfectionCard = (props) => {
         onBack={() => (window.location.href = "/states")}
         title={stateCodeToName(props?.stateInfo?.state)}
         subTitle={`Last Updated: ${props?.stateInfo?.lastUpdatedDate}`}
+        extra={[
+          <a
+            href="https://www.vaccines.gov/search/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button key="1" type="primary">
+              FIND A VACCINE
+            </Button>
+          </a>,
+        ]}
       />
       ,<Divider></Divider>
       <CasesTabsCard
